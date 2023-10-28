@@ -1,7 +1,7 @@
 grammar Piinkk;
 
 prog: PROGRAM PROGRAMID ';' vars0 fun0* body0;
-type0: INT | FLOAT | CHAR;
+type0: INT | FLOAT;
 array0: ID '[' NUMBER ']';
 
 if0: IF '(' expresion0 ')' bloque0 (ELSE bloque0)?;
