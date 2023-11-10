@@ -3,11 +3,11 @@ VARS
     int i,j,k, arregl[10];
     float val;
 
-function int fact (int j, float f, char c)
+function int fact (int j, float f)
 VARS
-    int i;
+    int x;
 {
-    i = j + (p - j * 2 + j);
+    x = j + (f - j * 2 + j);
     if(j == 1){
         return(j);
     }else{

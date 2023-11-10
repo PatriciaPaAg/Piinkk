@@ -1,6 +1,10 @@
 grammar Piinkk;
 
-prog: PROGRAM PROGRAMID ';' vars0 fun0* body0;
+/* @header {
+    package antlr;
+}*/
+
+prog: PROGRAM PROGRAMID ';' vars0? fun0* body0 EOF;
 type0: INT | FLOAT;
 array0: ID '[' NUMBER ']';
 
@@ -13,7 +17,8 @@ vars0: VARS (type0 var0 (',' var0)* ';')+;
 
 expresion0: exp0 (('==' | '>' | '<' | '!=' | '>=' | '<=') exp0)?;
 
-exp0: termino0 (('+' | '-') exp0)?;
+exp0: termino0 (('+' | '-') exp0)?; 
+/* 'aqui punto neuralgico' como ejecutar codigo en antlr visitor */
 
 termino0: factor0 (('*' | '/') termino0)?;
 
@@ -40,7 +45,6 @@ start : 'hola mundo' ;
 
 PROGRAM: 'Program';
 MAIN: 'main';
-COMMENT: '%%'(.)*?;
 VARS: 'VARS';
 FUNCTION:'function';
 INT: 'int';
@@ -71,3 +75,4 @@ NUMBER: [0-9]+;
 FLOAT_NUMBER: NUMBER '.' [0-9]+;
 PROGRAMID: [A-Z][a-zA-Z0-9_]*;
 ID: [a-z][a-zA-Z0-9_]*;
+COMMENT: '<3'~[\r\n]* -> skip;
