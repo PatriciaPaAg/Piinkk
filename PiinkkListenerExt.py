@@ -6,10 +6,16 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#prog.
     def enterProg(self, ctx):
+        #agregar nombre de programa and type to Symbol Table
+        #crear dir fun, inecesario porque ya esta creado
+        #piinkkLoader.symbol_table['nameProg'= ]
+        piinkkLoader.pendientes.append('agregar nombre de programa and type to Symbol Table')
         pass
 
     # Exit a parse tree produced by PiinkkParser#prog.
     def exitProg(self, ctx):
+        piinkkLoader.pendientes.append('delete dir fun and current variable global, or empty them')
+        #delete dir fun (necesario?) and current varTable (global)
         pass
 
 
@@ -192,14 +198,16 @@ class PiinkkListenerExt(PiinkkListener):
     # Exit a parse tree produced by PiinkkParser#fun0.
     def exitFun0(self, ctx):
         piinkkLoader.set_current_scope('global')
+        piinkkLoader.pendientes.append('eliminar la variTable de la current_scope')
 
     # Enter a parse tree produced by PiinkkParser#fun1.
     def enterFun1(self, ctx):
         fun_info = ctx.getText().split(':')
         fun_type, fun_name = fun_info[0], fun_info[1].split('(')[0]
-        piinkkLoader.set_current_scope(fun_name)
+        piinkkLoader.functionCheck(fun_name)
         piinkkLoader.symbol_table[fun_name] = {'type': fun_type, 'variables': {}}
-    
+        piinkkLoader.set_current_scope(fun_name)
+
     # Exit a parse tree produced by PiinkkParser#fun1.
     def exitFun1(self, ctx):
         pass

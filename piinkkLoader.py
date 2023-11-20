@@ -10,6 +10,7 @@ class PiinkkLoader():
         self.jump_stack = []
         self.symbol_table = defaultdict(lambda:{'variables':{}})
         self.current_scope = 'global'
+        self.pendientes = []
 
     def set_current_scope(self, scope_name):
         self.current_scope = scope_name
@@ -21,13 +22,15 @@ class PiinkkLoader():
             if name in self.symbol_table[self.current_scope]['variables']:
                 self.stopExecution(f'Variable \'{name}\' is already declared in current scope.')
 
+    def functionCheck(self, name):
+        if name in self.symbol_table:
+            self.stopExecution(f'Function \'{name}\' is already declared.')
+
     def stopExecution(self, errorType):
         print(errorType)
         exit()
 
 piinkkLoader = PiinkkLoader()
-
-
 
 
 
