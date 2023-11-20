@@ -39,7 +39,11 @@ escri: expresion0 | 'cte.string';
 escritura0: WRITE '(' escri (',' escri)* ')' ';';
 return0: RETURN '(' exp0 ')' ';' ;
 
-fun0: FUNCTION type0 ':' ID '(' (type0 ':' var0 (',' type0 ':' var0)* )? ')' vars0? bloque0;
+fun0: FUNCTION fun1 vars0? bloque0;
+fun1: type0 ':' ID '(' (fun2)? ')';
+fun2: fun3 (',' fun3)* ;
+fun3: type0 ':' var0;
+
 body0: MAIN '('')' bloque0;
 start : 'hola mundo' ;
 

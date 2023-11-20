@@ -76,19 +76,20 @@ class PiinkkListenerExt(PiinkkListener):
 
     def enterVars1(self, ctx):
         vars_info = ctx.getText().split(':')
-        vars_type = vars_info[0]
-        vars_info = vars_info[1].split(',')
-        for _ in range(len(vars_info)):
+        vars_type, vars_info = vars_info[0], vars_info[1].split(',')
+        scope = piinkkLoader.current_scope
+        for var_info in vars_info:
             #  If the next element is an array
-            if vars_info[0].find('[') != -1:
-                vars_info_arr = vars_info[0].split('[')
-                var_name = vars_info_arr[0]
-                var_arr_size = vars_info_arr[1][:-1]
-                piinkkLoader.dirFun['global']['variables'][var_name] = {'type': vars_type, 'size': var_arr_size}
+            if '[' in var_info:
+                var_name, var_arr_size = var_info.split('[')
+                var_arr_size = int(var_arr_size.rstrip(']'))
+                piinkkLoader.variableCheck(var_name)
+                piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': vars_type, 'size': var_arr_size}
             else:
-                var_name = vars_info[0]
-                piinkkLoader.dirFun['global']['variables'][var_name] = {'type': vars_type}
-            vars_info.pop(0)
+                var_name = var_info
+                piinkkLoader.variableCheck(var_name)
+                piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': vars_type}
+            
 
     # Exit a parse tree produced by PiinkkParser#vars1.
     def exitVars1(self, ctx):
@@ -190,8 +191,47 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Exit a parse tree produced by PiinkkParser#fun0.
     def exitFun0(self, ctx):
+        piinkkLoader.set_current_scope('global')
+
+    # Enter a parse tree produced by PiinkkParser#fun1.
+    def enterFun1(self, ctx):
+        fun_info = ctx.getText().split(':')
+        fun_type, fun_name = fun_info[0], fun_info[1].split('(')[0]
+        piinkkLoader.set_current_scope(fun_name)
+        piinkkLoader.symbol_table[fun_name] = {'type': fun_type, 'variables': {}}
+    
+    # Exit a parse tree produced by PiinkkParser#fun1.
+    def exitFun1(self, ctx):
         pass
 
+    # Enter a parse tree produced by PiinkkParser#fun2.
+    def enterFun2(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#fun2.
+    def exitFun2(self, ctx):
+        pass
+
+    # Enter a parse tree produced by PiinkkParser#fun3.
+    def enterFun3(self, ctx):
+        var_info = ctx.getText().split(':')
+        var_type, var_info = var_info[0], var_info[1]
+        scope = piinkkLoader.current_scope
+        #  If the next element is an array
+        if '[' in var_info:
+            var_name, var_arr_size = var_info.split('[')
+            var_arr_size = int(var_arr_size.rstrip(']'))
+            piinkkLoader.variableCheck(var_name)
+            piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': var_type, 'size': var_arr_size}
+        else:
+            var_name = var_info
+            piinkkLoader.variableCheck(var_name)
+            piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': var_type}
+            
+
+    # Exit a parse tree produced by PiinkkParser#fun3.
+    def exitFun3(self, ctx):
+        pass
 
     # Enter a parse tree produced by PiinkkParser#body0.
     def enterBody0(self, ctx):

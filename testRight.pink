@@ -3,9 +3,10 @@ VARS
 int: i,j,k, arreg[10];
 float: val;
 
-function int: fact (int: j, float: f)
+function int: fact (int: a, float: b)
 VARS
     int: x;
+    float: y;
 {
     x = j + (f - j * 2 + j);
     if(j == 1){
@@ -14,4 +15,17 @@ VARS
 return(j * (j-1));
     }
 }
+
+function float: fibo (int: a, float: b, bool: arrBool[2])
+VARS
+    int: y;
+{
+    x = j + (f - j * 2 + j);
+    if(j == 1){
+        return(j);
+    }else{
+return(j * (j-1));
+    }
+}
+
 main(){}

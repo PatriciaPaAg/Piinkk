@@ -15,7 +15,7 @@ parser = PiinkkParser(stream)
 tree = parser.prog()
 listener = PiinkkListenerExt()
 ParseTreeWalker().walk(listener, tree)
-
-print(piinkkLoader.dirFun)
+print('\nPrints del main')
+print(piinkkLoader.symbol_table)
 print('hola mundo')
 
