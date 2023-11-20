@@ -1,11 +1,11 @@
 Program Pelos;
 VARS
-    int i,j,k, arregl[10];
-    float val;
+int: i,j,k, arreg[10];
+float: val;
 
-function int fact (int j, float f)
+function int: fact (int: j, float: f)
 VARS
-    int x;
+    int: x;
 {
     x = j + (f - j * 2 + j);
     if(j == 1){
