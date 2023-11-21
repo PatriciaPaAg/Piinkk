@@ -72,6 +72,15 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#var1.
+    def enterVar1(self, ctx:PiinkkParser.Var1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#var1.
+    def exitVar1(self, ctx:PiinkkParser.Var1Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#vars0.
     def enterVars0(self, ctx:PiinkkParser.Vars0Context):
         pass

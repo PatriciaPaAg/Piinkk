@@ -11,80 +11,82 @@ else:
 
 def serializedATN():
     return [
-        4,1,56,224,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,56,230,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
-        7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,1,0,1,0,1,0,1,0,3,0,
-        55,8,0,1,0,5,0,58,8,0,10,0,12,0,61,9,0,1,0,1,0,1,0,1,1,1,1,1,2,1,
-        2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,3,3,80,8,3,1,4,1,4,1,4,
-        1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,1,6,
-        1,6,3,6,102,8,6,1,7,1,7,1,7,1,7,4,7,108,8,7,11,7,12,7,109,1,8,1,
-        8,1,8,1,8,1,8,5,8,117,8,8,10,8,12,8,120,9,8,1,9,1,9,1,9,3,9,125,
-        8,9,1,10,1,10,1,10,3,10,130,8,10,1,11,1,11,1,11,3,11,135,8,11,1,
-        12,1,12,1,12,1,12,1,12,3,12,142,8,12,1,13,1,13,5,13,146,8,13,10,
-        13,12,13,149,9,13,1,13,1,13,1,14,1,14,1,14,1,14,1,14,1,14,3,14,159,
-        8,14,1,15,1,15,1,15,1,15,1,15,1,16,1,16,3,16,168,8,16,1,17,1,17,
-        1,17,1,17,1,17,5,17,175,8,17,10,17,12,17,178,9,17,1,17,1,17,1,17,
-        1,18,1,18,1,18,1,18,1,18,1,18,1,19,1,19,1,19,3,19,192,8,19,1,19,
-        1,19,1,20,1,20,1,20,1,20,1,20,3,20,201,8,20,1,20,1,20,1,21,1,21,
-        1,21,5,21,208,8,21,10,21,12,21,211,9,21,1,22,1,22,1,22,1,22,1,23,
-        1,23,1,23,1,23,1,23,1,24,1,24,1,24,0,0,25,0,2,4,6,8,10,12,14,16,
-        18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,0,4,1,0,28,30,1,
-        0,9,14,1,0,15,16,1,0,17,18,221,0,50,1,0,0,0,2,65,1,0,0,0,4,67,1,
-        0,0,0,6,72,1,0,0,0,8,81,1,0,0,0,10,88,1,0,0,0,12,101,1,0,0,0,14,
-        103,1,0,0,0,16,111,1,0,0,0,18,121,1,0,0,0,20,126,1,0,0,0,22,131,
-        1,0,0,0,24,141,1,0,0,0,26,143,1,0,0,0,28,158,1,0,0,0,30,160,1,0,
-        0,0,32,167,1,0,0,0,34,169,1,0,0,0,36,182,1,0,0,0,38,188,1,0,0,0,
-        40,195,1,0,0,0,42,204,1,0,0,0,44,212,1,0,0,0,46,216,1,0,0,0,48,221,
-        1,0,0,0,50,51,5,24,0,0,51,52,5,54,0,0,52,54,5,1,0,0,53,55,3,14,7,
-        0,54,53,1,0,0,0,54,55,1,0,0,0,55,59,1,0,0,0,56,58,3,38,19,0,57,56,
-        1,0,0,0,58,61,1,0,0,0,59,57,1,0,0,0,59,60,1,0,0,0,60,62,1,0,0,0,
-        61,59,1,0,0,0,62,63,3,46,23,0,63,64,5,0,0,1,64,1,1,0,0,0,65,66,7,
-        0,0,0,66,3,1,0,0,0,67,68,5,55,0,0,68,69,5,2,0,0,69,70,5,52,0,0,70,
-        71,5,3,0,0,71,5,1,0,0,0,72,73,5,36,0,0,73,74,5,4,0,0,74,75,3,18,
-        9,0,75,76,5,5,0,0,76,79,3,26,13,0,77,78,5,38,0,0,78,80,3,26,13,0,
-        79,77,1,0,0,0,79,80,1,0,0,0,80,7,1,0,0,0,81,82,5,39,0,0,82,83,5,
-        4,0,0,83,84,3,18,9,0,84,85,5,5,0,0,85,86,5,40,0,0,86,87,3,26,13,
-        0,87,9,1,0,0,0,88,89,5,41,0,0,89,90,5,55,0,0,90,91,5,6,0,0,91,92,
-        3,20,10,0,92,93,5,42,0,0,93,94,3,20,10,0,94,95,5,40,0,0,95,96,3,
-        26,13,0,96,11,1,0,0,0,97,102,5,55,0,0,98,102,3,4,2,0,99,102,5,52,
-        0,0,100,102,5,53,0,0,101,97,1,0,0,0,101,98,1,0,0,0,101,99,1,0,0,
-        0,101,100,1,0,0,0,102,13,1,0,0,0,103,107,5,26,0,0,104,105,3,16,8,
-        0,105,106,5,1,0,0,106,108,1,0,0,0,107,104,1,0,0,0,108,109,1,0,0,
-        0,109,107,1,0,0,0,109,110,1,0,0,0,110,15,1,0,0,0,111,112,3,2,1,0,
-        112,113,5,7,0,0,113,118,3,12,6,0,114,115,5,8,0,0,115,117,3,12,6,
-        0,116,114,1,0,0,0,117,120,1,0,0,0,118,116,1,0,0,0,118,119,1,0,0,
-        0,119,17,1,0,0,0,120,118,1,0,0,0,121,124,3,20,10,0,122,123,7,1,0,
-        0,123,125,3,20,10,0,124,122,1,0,0,0,124,125,1,0,0,0,125,19,1,0,0,
-        0,126,129,3,22,11,0,127,128,7,2,0,0,128,130,3,20,10,0,129,127,1,
-        0,0,0,129,130,1,0,0,0,130,21,1,0,0,0,131,134,3,24,12,0,132,133,7,
-        3,0,0,133,135,3,22,11,0,134,132,1,0,0,0,134,135,1,0,0,0,135,23,1,
-        0,0,0,136,137,5,4,0,0,137,138,3,18,9,0,138,139,5,5,0,0,139,142,1,
-        0,0,0,140,142,3,12,6,0,141,136,1,0,0,0,141,140,1,0,0,0,142,25,1,
-        0,0,0,143,147,5,19,0,0,144,146,3,28,14,0,145,144,1,0,0,0,146,149,
-        1,0,0,0,147,145,1,0,0,0,147,148,1,0,0,0,148,150,1,0,0,0,149,147,
-        1,0,0,0,150,151,5,20,0,0,151,27,1,0,0,0,152,159,3,30,15,0,153,159,
-        3,6,3,0,154,159,3,8,4,0,155,159,3,10,5,0,156,159,3,34,17,0,157,159,
-        3,36,18,0,158,152,1,0,0,0,158,153,1,0,0,0,158,154,1,0,0,0,158,155,
-        1,0,0,0,158,156,1,0,0,0,158,157,1,0,0,0,159,29,1,0,0,0,160,161,5,
-        55,0,0,161,162,5,6,0,0,162,163,3,18,9,0,163,164,5,1,0,0,164,31,1,
-        0,0,0,165,168,3,18,9,0,166,168,5,21,0,0,167,165,1,0,0,0,167,166,
-        1,0,0,0,168,33,1,0,0,0,169,170,5,35,0,0,170,171,5,4,0,0,171,176,
-        3,32,16,0,172,173,5,8,0,0,173,175,3,32,16,0,174,172,1,0,0,0,175,
-        178,1,0,0,0,176,174,1,0,0,0,176,177,1,0,0,0,177,179,1,0,0,0,178,
-        176,1,0,0,0,179,180,5,5,0,0,180,181,5,1,0,0,181,35,1,0,0,0,182,183,
-        5,33,0,0,183,184,5,4,0,0,184,185,3,20,10,0,185,186,5,5,0,0,186,187,
-        5,1,0,0,187,37,1,0,0,0,188,189,5,27,0,0,189,191,3,40,20,0,190,192,
-        3,14,7,0,191,190,1,0,0,0,191,192,1,0,0,0,192,193,1,0,0,0,193,194,
-        3,26,13,0,194,39,1,0,0,0,195,196,3,2,1,0,196,197,5,7,0,0,197,198,
-        5,55,0,0,198,200,5,4,0,0,199,201,3,42,21,0,200,199,1,0,0,0,200,201,
-        1,0,0,0,201,202,1,0,0,0,202,203,5,5,0,0,203,41,1,0,0,0,204,209,3,
-        44,22,0,205,206,5,8,0,0,206,208,3,44,22,0,207,205,1,0,0,0,208,211,
-        1,0,0,0,209,207,1,0,0,0,209,210,1,0,0,0,210,43,1,0,0,0,211,209,1,
-        0,0,0,212,213,3,2,1,0,213,214,5,7,0,0,214,215,3,12,6,0,215,45,1,
-        0,0,0,216,217,5,25,0,0,217,218,5,4,0,0,218,219,5,5,0,0,219,220,3,
-        26,13,0,220,47,1,0,0,0,221,222,5,22,0,0,222,49,1,0,0,0,17,54,59,
-        79,101,109,118,124,129,134,141,147,158,167,176,191,200,209
+        7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,1,0,1,0,1,
+        0,1,0,3,0,57,8,0,1,0,5,0,60,8,0,10,0,12,0,63,9,0,1,0,1,0,1,0,1,1,
+        1,1,1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,3,3,82,8,3,1,
+        4,1,4,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,
+        6,1,6,1,6,1,6,3,6,104,8,6,1,7,1,7,3,7,108,8,7,1,8,1,8,1,8,1,8,4,
+        8,114,8,8,11,8,12,8,115,1,9,1,9,1,9,1,9,1,9,5,9,123,8,9,10,9,12,
+        9,126,9,9,1,10,1,10,1,10,3,10,131,8,10,1,11,1,11,1,11,3,11,136,8,
+        11,1,12,1,12,1,12,3,12,141,8,12,1,13,1,13,1,13,1,13,1,13,3,13,148,
+        8,13,1,14,1,14,5,14,152,8,14,10,14,12,14,155,9,14,1,14,1,14,1,15,
+        1,15,1,15,1,15,1,15,1,15,3,15,165,8,15,1,16,1,16,1,16,1,16,1,16,
+        1,17,1,17,3,17,174,8,17,1,18,1,18,1,18,1,18,1,18,5,18,181,8,18,10,
+        18,12,18,184,9,18,1,18,1,18,1,18,1,19,1,19,1,19,1,19,1,19,1,19,1,
+        20,1,20,1,20,3,20,198,8,20,1,20,1,20,1,21,1,21,1,21,1,21,1,21,3,
+        21,207,8,21,1,21,1,21,1,22,1,22,1,22,5,22,214,8,22,10,22,12,22,217,
+        9,22,1,23,1,23,1,23,1,23,1,24,1,24,1,24,1,24,1,24,1,25,1,25,1,25,
+        0,0,26,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,
+        42,44,46,48,50,0,4,1,0,28,30,1,0,9,14,1,0,15,16,1,0,17,18,227,0,
+        52,1,0,0,0,2,67,1,0,0,0,4,69,1,0,0,0,6,74,1,0,0,0,8,83,1,0,0,0,10,
+        90,1,0,0,0,12,103,1,0,0,0,14,107,1,0,0,0,16,109,1,0,0,0,18,117,1,
+        0,0,0,20,127,1,0,0,0,22,132,1,0,0,0,24,137,1,0,0,0,26,147,1,0,0,
+        0,28,149,1,0,0,0,30,164,1,0,0,0,32,166,1,0,0,0,34,173,1,0,0,0,36,
+        175,1,0,0,0,38,188,1,0,0,0,40,194,1,0,0,0,42,201,1,0,0,0,44,210,
+        1,0,0,0,46,218,1,0,0,0,48,222,1,0,0,0,50,227,1,0,0,0,52,53,5,24,
+        0,0,53,54,5,54,0,0,54,56,5,1,0,0,55,57,3,16,8,0,56,55,1,0,0,0,56,
+        57,1,0,0,0,57,61,1,0,0,0,58,60,3,40,20,0,59,58,1,0,0,0,60,63,1,0,
+        0,0,61,59,1,0,0,0,61,62,1,0,0,0,62,64,1,0,0,0,63,61,1,0,0,0,64,65,
+        3,48,24,0,65,66,5,0,0,1,66,1,1,0,0,0,67,68,7,0,0,0,68,3,1,0,0,0,
+        69,70,5,55,0,0,70,71,5,2,0,0,71,72,5,52,0,0,72,73,5,3,0,0,73,5,1,
+        0,0,0,74,75,5,36,0,0,75,76,5,4,0,0,76,77,3,20,10,0,77,78,5,5,0,0,
+        78,81,3,28,14,0,79,80,5,38,0,0,80,82,3,28,14,0,81,79,1,0,0,0,81,
+        82,1,0,0,0,82,7,1,0,0,0,83,84,5,39,0,0,84,85,5,4,0,0,85,86,3,20,
+        10,0,86,87,5,5,0,0,87,88,5,40,0,0,88,89,3,28,14,0,89,9,1,0,0,0,90,
+        91,5,41,0,0,91,92,5,55,0,0,92,93,5,6,0,0,93,94,3,22,11,0,94,95,5,
+        42,0,0,95,96,3,22,11,0,96,97,5,40,0,0,97,98,3,28,14,0,98,11,1,0,
+        0,0,99,104,5,55,0,0,100,104,3,4,2,0,101,104,5,52,0,0,102,104,5,53,
+        0,0,103,99,1,0,0,0,103,100,1,0,0,0,103,101,1,0,0,0,103,102,1,0,0,
+        0,104,13,1,0,0,0,105,108,5,55,0,0,106,108,3,4,2,0,107,105,1,0,0,
+        0,107,106,1,0,0,0,108,15,1,0,0,0,109,113,5,26,0,0,110,111,3,18,9,
+        0,111,112,5,1,0,0,112,114,1,0,0,0,113,110,1,0,0,0,114,115,1,0,0,
+        0,115,113,1,0,0,0,115,116,1,0,0,0,116,17,1,0,0,0,117,118,3,2,1,0,
+        118,119,5,7,0,0,119,124,3,14,7,0,120,121,5,8,0,0,121,123,3,14,7,
+        0,122,120,1,0,0,0,123,126,1,0,0,0,124,122,1,0,0,0,124,125,1,0,0,
+        0,125,19,1,0,0,0,126,124,1,0,0,0,127,130,3,22,11,0,128,129,7,1,0,
+        0,129,131,3,22,11,0,130,128,1,0,0,0,130,131,1,0,0,0,131,21,1,0,0,
+        0,132,135,3,24,12,0,133,134,7,2,0,0,134,136,3,22,11,0,135,133,1,
+        0,0,0,135,136,1,0,0,0,136,23,1,0,0,0,137,140,3,26,13,0,138,139,7,
+        3,0,0,139,141,3,24,12,0,140,138,1,0,0,0,140,141,1,0,0,0,141,25,1,
+        0,0,0,142,143,5,4,0,0,143,144,3,20,10,0,144,145,5,5,0,0,145,148,
+        1,0,0,0,146,148,3,12,6,0,147,142,1,0,0,0,147,146,1,0,0,0,148,27,
+        1,0,0,0,149,153,5,19,0,0,150,152,3,30,15,0,151,150,1,0,0,0,152,155,
+        1,0,0,0,153,151,1,0,0,0,153,154,1,0,0,0,154,156,1,0,0,0,155,153,
+        1,0,0,0,156,157,5,20,0,0,157,29,1,0,0,0,158,165,3,32,16,0,159,165,
+        3,6,3,0,160,165,3,8,4,0,161,165,3,10,5,0,162,165,3,36,18,0,163,165,
+        3,38,19,0,164,158,1,0,0,0,164,159,1,0,0,0,164,160,1,0,0,0,164,161,
+        1,0,0,0,164,162,1,0,0,0,164,163,1,0,0,0,165,31,1,0,0,0,166,167,5,
+        55,0,0,167,168,5,6,0,0,168,169,3,20,10,0,169,170,5,1,0,0,170,33,
+        1,0,0,0,171,174,3,20,10,0,172,174,5,21,0,0,173,171,1,0,0,0,173,172,
+        1,0,0,0,174,35,1,0,0,0,175,176,5,35,0,0,176,177,5,4,0,0,177,182,
+        3,34,17,0,178,179,5,8,0,0,179,181,3,34,17,0,180,178,1,0,0,0,181,
+        184,1,0,0,0,182,180,1,0,0,0,182,183,1,0,0,0,183,185,1,0,0,0,184,
+        182,1,0,0,0,185,186,5,5,0,0,186,187,5,1,0,0,187,37,1,0,0,0,188,189,
+        5,33,0,0,189,190,5,4,0,0,190,191,3,22,11,0,191,192,5,5,0,0,192,193,
+        5,1,0,0,193,39,1,0,0,0,194,195,5,27,0,0,195,197,3,42,21,0,196,198,
+        3,16,8,0,197,196,1,0,0,0,197,198,1,0,0,0,198,199,1,0,0,0,199,200,
+        3,28,14,0,200,41,1,0,0,0,201,202,3,2,1,0,202,203,5,7,0,0,203,204,
+        5,55,0,0,204,206,5,4,0,0,205,207,3,44,22,0,206,205,1,0,0,0,206,207,
+        1,0,0,0,207,208,1,0,0,0,208,209,5,5,0,0,209,43,1,0,0,0,210,215,3,
+        46,23,0,211,212,5,8,0,0,212,214,3,46,23,0,213,211,1,0,0,0,214,217,
+        1,0,0,0,215,213,1,0,0,0,215,216,1,0,0,0,216,45,1,0,0,0,217,215,1,
+        0,0,0,218,219,3,2,1,0,219,220,5,7,0,0,220,221,3,12,6,0,221,47,1,
+        0,0,0,222,223,5,25,0,0,223,224,5,4,0,0,224,225,5,5,0,0,225,226,3,
+        28,14,0,226,49,1,0,0,0,227,228,5,22,0,0,228,51,1,0,0,0,18,56,61,
+        81,103,107,115,124,130,135,140,147,153,164,173,182,197,206,215
     ]
 
 class PiinkkParser ( Parser ):
@@ -128,29 +130,31 @@ class PiinkkParser ( Parser ):
     RULE_while0 = 4
     RULE_for0 = 5
     RULE_var0 = 6
-    RULE_vars0 = 7
-    RULE_vars1 = 8
-    RULE_expresion0 = 9
-    RULE_exp0 = 10
-    RULE_termino0 = 11
-    RULE_factor0 = 12
-    RULE_bloque0 = 13
-    RULE_estatuto0 = 14
-    RULE_asignacion0 = 15
-    RULE_escri = 16
-    RULE_escritura0 = 17
-    RULE_return0 = 18
-    RULE_fun0 = 19
-    RULE_fun1 = 20
-    RULE_fun2 = 21
-    RULE_fun3 = 22
-    RULE_body0 = 23
-    RULE_start = 24
+    RULE_var1 = 7
+    RULE_vars0 = 8
+    RULE_vars1 = 9
+    RULE_expresion0 = 10
+    RULE_exp0 = 11
+    RULE_termino0 = 12
+    RULE_factor0 = 13
+    RULE_bloque0 = 14
+    RULE_estatuto0 = 15
+    RULE_asignacion0 = 16
+    RULE_escri = 17
+    RULE_escritura0 = 18
+    RULE_return0 = 19
+    RULE_fun0 = 20
+    RULE_fun1 = 21
+    RULE_fun2 = 22
+    RULE_fun3 = 23
+    RULE_body0 = 24
+    RULE_start = 25
 
     ruleNames =  [ "prog", "type0", "array0", "if0", "while0", "for0", "var0", 
-                   "vars0", "vars1", "expresion0", "exp0", "termino0", "factor0", 
-                   "bloque0", "estatuto0", "asignacion0", "escri", "escritura0", 
-                   "return0", "fun0", "fun1", "fun2", "fun3", "body0", "start" ]
+                   "var1", "vars0", "vars1", "expresion0", "exp0", "termino0", 
+                   "factor0", "bloque0", "estatuto0", "asignacion0", "escri", 
+                   "escritura0", "return0", "fun0", "fun1", "fun2", "fun3", 
+                   "body0", "start" ]
 
     EOF = Token.EOF
     T__0=1
@@ -271,33 +275,33 @@ class PiinkkParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 50
-            self.match(PiinkkParser.PROGRAM)
-            self.state = 51
-            self.match(PiinkkParser.PROGRAMID)
             self.state = 52
-            self.match(PiinkkParser.T__0)
+            self.match(PiinkkParser.PROGRAM)
+            self.state = 53
+            self.match(PiinkkParser.PROGRAMID)
             self.state = 54
+            self.match(PiinkkParser.T__0)
+            self.state = 56
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==26:
-                self.state = 53
+                self.state = 55
                 self.vars0()
 
 
-            self.state = 59
+            self.state = 61
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==27:
-                self.state = 56
+                self.state = 58
                 self.fun0()
-                self.state = 61
+                self.state = 63
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 62
+            self.state = 64
             self.body0()
-            self.state = 63
+            self.state = 65
             self.match(PiinkkParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -345,7 +349,7 @@ class PiinkkParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 65
+            self.state = 67
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 1879048192) != 0)):
                 self._errHandler.recoverInline(self)
@@ -394,13 +398,13 @@ class PiinkkParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_array0)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 67
-            self.match(PiinkkParser.ID)
-            self.state = 68
-            self.match(PiinkkParser.T__1)
             self.state = 69
-            self.match(PiinkkParser.NUMBER)
+            self.match(PiinkkParser.ID)
             self.state = 70
+            self.match(PiinkkParser.T__1)
+            self.state = 71
+            self.match(PiinkkParser.NUMBER)
+            self.state = 72
             self.match(PiinkkParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -456,23 +460,23 @@ class PiinkkParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 72
-            self.match(PiinkkParser.IF)
-            self.state = 73
-            self.match(PiinkkParser.T__3)
             self.state = 74
-            self.expresion0()
+            self.match(PiinkkParser.IF)
             self.state = 75
-            self.match(PiinkkParser.T__4)
+            self.match(PiinkkParser.T__3)
             self.state = 76
+            self.expresion0()
+            self.state = 77
+            self.match(PiinkkParser.T__4)
+            self.state = 78
             self.bloque0()
-            self.state = 79
+            self.state = 81
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==38:
-                self.state = 77
+                self.state = 79
                 self.match(PiinkkParser.ELSE)
-                self.state = 78
+                self.state = 80
                 self.bloque0()
 
 
@@ -526,17 +530,17 @@ class PiinkkParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_while0)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 81
-            self.match(PiinkkParser.WHILE)
-            self.state = 82
-            self.match(PiinkkParser.T__3)
             self.state = 83
-            self.expresion0()
+            self.match(PiinkkParser.WHILE)
             self.state = 84
-            self.match(PiinkkParser.T__4)
+            self.match(PiinkkParser.T__3)
             self.state = 85
-            self.match(PiinkkParser.DO)
+            self.expresion0()
             self.state = 86
+            self.match(PiinkkParser.T__4)
+            self.state = 87
+            self.match(PiinkkParser.DO)
+            self.state = 88
             self.bloque0()
         except RecognitionException as re:
             localctx.exception = re
@@ -597,21 +601,21 @@ class PiinkkParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_for0)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 88
-            self.match(PiinkkParser.FOR)
-            self.state = 89
-            self.match(PiinkkParser.ID)
             self.state = 90
-            self.match(PiinkkParser.T__5)
+            self.match(PiinkkParser.FOR)
             self.state = 91
-            self.exp0()
+            self.match(PiinkkParser.ID)
             self.state = 92
-            self.match(PiinkkParser.TO)
+            self.match(PiinkkParser.T__5)
             self.state = 93
             self.exp0()
             self.state = 94
-            self.match(PiinkkParser.DO)
+            self.match(PiinkkParser.TO)
             self.state = 95
+            self.exp0()
+            self.state = 96
+            self.match(PiinkkParser.DO)
+            self.state = 97
             self.bloque0()
         except RecognitionException as re:
             localctx.exception = re
@@ -661,31 +665,89 @@ class PiinkkParser ( Parser ):
         localctx = PiinkkParser.Var0Context(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_var0)
         try:
-            self.state = 101
+            self.state = 103
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 97
+                self.state = 99
                 self.match(PiinkkParser.ID)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 98
+                self.state = 100
                 self.array0()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 99
+                self.state = 101
                 self.match(PiinkkParser.NUMBER)
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 100
+                self.state = 102
                 self.match(PiinkkParser.FLOAT_NUMBER)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Var1Context(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def ID(self):
+            return self.getToken(PiinkkParser.ID, 0)
+
+        def array0(self):
+            return self.getTypedRuleContext(PiinkkParser.Array0Context,0)
+
+
+        def getRuleIndex(self):
+            return PiinkkParser.RULE_var1
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterVar1" ):
+                listener.enterVar1(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitVar1" ):
+                listener.exitVar1(self)
+
+
+
+
+    def var1(self):
+
+        localctx = PiinkkParser.Var1Context(self, self._ctx, self.state)
+        self.enterRule(localctx, 14, self.RULE_var1)
+        try:
+            self.state = 107
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 105
+                self.match(PiinkkParser.ID)
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 106
+                self.array0()
                 pass
 
 
@@ -732,21 +794,21 @@ class PiinkkParser ( Parser ):
     def vars0(self):
 
         localctx = PiinkkParser.Vars0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_vars0)
+        self.enterRule(localctx, 16, self.RULE_vars0)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 103
+            self.state = 109
             self.match(PiinkkParser.VARS)
-            self.state = 107 
+            self.state = 113 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 104
+                self.state = 110
                 self.vars1()
-                self.state = 105
+                self.state = 111
                 self.match(PiinkkParser.T__0)
-                self.state = 109 
+                self.state = 115 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 1879048192) != 0)):
@@ -772,11 +834,11 @@ class PiinkkParser ( Parser ):
             return self.getTypedRuleContext(PiinkkParser.Type0Context,0)
 
 
-        def var0(self, i:int=None):
+        def var1(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(PiinkkParser.Var0Context)
+                return self.getTypedRuleContexts(PiinkkParser.Var1Context)
             else:
-                return self.getTypedRuleContext(PiinkkParser.Var0Context,i)
+                return self.getTypedRuleContext(PiinkkParser.Var1Context,i)
 
 
         def getRuleIndex(self):
@@ -796,25 +858,25 @@ class PiinkkParser ( Parser ):
     def vars1(self):
 
         localctx = PiinkkParser.Vars1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_vars1)
+        self.enterRule(localctx, 18, self.RULE_vars1)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 111
+            self.state = 117
             self.type0()
-            self.state = 112
-            self.match(PiinkkParser.T__6)
-            self.state = 113
-            self.var0()
             self.state = 118
+            self.match(PiinkkParser.T__6)
+            self.state = 119
+            self.var1()
+            self.state = 124
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==8:
-                self.state = 114
-                self.match(PiinkkParser.T__7)
-                self.state = 115
-                self.var0()
                 self.state = 120
+                self.match(PiinkkParser.T__7)
+                self.state = 121
+                self.var1()
+                self.state = 126
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -858,24 +920,24 @@ class PiinkkParser ( Parser ):
     def expresion0(self):
 
         localctx = PiinkkParser.Expresion0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_expresion0)
+        self.enterRule(localctx, 20, self.RULE_expresion0)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 121
+            self.state = 127
             self.exp0()
-            self.state = 124
+            self.state = 130
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & 32256) != 0):
-                self.state = 122
+                self.state = 128
                 _la = self._input.LA(1)
                 if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 32256) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 123
+                self.state = 129
                 self.exp0()
 
 
@@ -920,24 +982,24 @@ class PiinkkParser ( Parser ):
     def exp0(self):
 
         localctx = PiinkkParser.Exp0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_exp0)
+        self.enterRule(localctx, 22, self.RULE_exp0)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 126
+            self.state = 132
             self.termino0()
-            self.state = 129
+            self.state = 135
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==15 or _la==16:
-                self.state = 127
+                self.state = 133
                 _la = self._input.LA(1)
                 if not(_la==15 or _la==16):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 128
+                self.state = 134
                 self.exp0()
 
 
@@ -982,24 +1044,24 @@ class PiinkkParser ( Parser ):
     def termino0(self):
 
         localctx = PiinkkParser.Termino0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_termino0)
+        self.enterRule(localctx, 24, self.RULE_termino0)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 131
+            self.state = 137
             self.factor0()
-            self.state = 134
+            self.state = 140
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==17 or _la==18:
-                self.state = 132
+                self.state = 138
                 _la = self._input.LA(1)
                 if not(_la==17 or _la==18):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 133
+                self.state = 139
                 self.termino0()
 
 
@@ -1044,23 +1106,23 @@ class PiinkkParser ( Parser ):
     def factor0(self):
 
         localctx = PiinkkParser.Factor0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_factor0)
+        self.enterRule(localctx, 26, self.RULE_factor0)
         try:
-            self.state = 141
+            self.state = 147
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [4]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 136
+                self.state = 142
                 self.match(PiinkkParser.T__3)
-                self.state = 137
+                self.state = 143
                 self.expresion0()
-                self.state = 138
+                self.state = 144
                 self.match(PiinkkParser.T__4)
                 pass
             elif token in [52, 53, 55]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 140
+                self.state = 146
                 self.var0()
                 pass
             else:
@@ -1106,23 +1168,23 @@ class PiinkkParser ( Parser ):
     def bloque0(self):
 
         localctx = PiinkkParser.Bloque0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_bloque0)
+        self.enterRule(localctx, 28, self.RULE_bloque0)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 143
+            self.state = 149
             self.match(PiinkkParser.T__18)
-            self.state = 147
+            self.state = 153
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & 36031657467183104) != 0):
-                self.state = 144
+                self.state = 150
                 self.estatuto0()
-                self.state = 149
+                self.state = 155
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 150
+            self.state = 156
             self.match(PiinkkParser.T__19)
         except RecognitionException as re:
             localctx.exception = re
@@ -1181,39 +1243,39 @@ class PiinkkParser ( Parser ):
     def estatuto0(self):
 
         localctx = PiinkkParser.Estatuto0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_estatuto0)
+        self.enterRule(localctx, 30, self.RULE_estatuto0)
         try:
-            self.state = 158
+            self.state = 164
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [55]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 152
+                self.state = 158
                 self.asignacion0()
                 pass
             elif token in [36]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 153
+                self.state = 159
                 self.if0()
                 pass
             elif token in [39]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 154
+                self.state = 160
                 self.while0()
                 pass
             elif token in [41]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 155
+                self.state = 161
                 self.for0()
                 pass
             elif token in [35]:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 156
+                self.state = 162
                 self.escritura0()
                 pass
             elif token in [33]:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 157
+                self.state = 163
                 self.return0()
                 pass
             else:
@@ -1259,16 +1321,16 @@ class PiinkkParser ( Parser ):
     def asignacion0(self):
 
         localctx = PiinkkParser.Asignacion0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_asignacion0)
+        self.enterRule(localctx, 32, self.RULE_asignacion0)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 160
+            self.state = 166
             self.match(PiinkkParser.ID)
-            self.state = 161
+            self.state = 167
             self.match(PiinkkParser.T__5)
-            self.state = 162
+            self.state = 168
             self.expresion0()
-            self.state = 163
+            self.state = 169
             self.match(PiinkkParser.T__0)
         except RecognitionException as re:
             localctx.exception = re
@@ -1307,19 +1369,19 @@ class PiinkkParser ( Parser ):
     def escri(self):
 
         localctx = PiinkkParser.EscriContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 32, self.RULE_escri)
+        self.enterRule(localctx, 34, self.RULE_escri)
         try:
-            self.state = 167
+            self.state = 173
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [4, 52, 53, 55]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 165
+                self.state = 171
                 self.expresion0()
                 pass
             elif token in [21]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 166
+                self.state = 172
                 self.match(PiinkkParser.T__20)
                 pass
             else:
@@ -1368,31 +1430,31 @@ class PiinkkParser ( Parser ):
     def escritura0(self):
 
         localctx = PiinkkParser.Escritura0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_escritura0)
+        self.enterRule(localctx, 36, self.RULE_escritura0)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 169
+            self.state = 175
             self.match(PiinkkParser.WRITE)
-            self.state = 170
-            self.match(PiinkkParser.T__3)
-            self.state = 171
-            self.escri()
             self.state = 176
+            self.match(PiinkkParser.T__3)
+            self.state = 177
+            self.escri()
+            self.state = 182
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==8:
-                self.state = 172
-                self.match(PiinkkParser.T__7)
-                self.state = 173
-                self.escri()
                 self.state = 178
+                self.match(PiinkkParser.T__7)
+                self.state = 179
+                self.escri()
+                self.state = 184
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 179
+            self.state = 185
             self.match(PiinkkParser.T__4)
-            self.state = 180
+            self.state = 186
             self.match(PiinkkParser.T__0)
         except RecognitionException as re:
             localctx.exception = re
@@ -1434,18 +1496,18 @@ class PiinkkParser ( Parser ):
     def return0(self):
 
         localctx = PiinkkParser.Return0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 36, self.RULE_return0)
+        self.enterRule(localctx, 38, self.RULE_return0)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 182
+            self.state = 188
             self.match(PiinkkParser.RETURN)
-            self.state = 183
+            self.state = 189
             self.match(PiinkkParser.T__3)
-            self.state = 184
+            self.state = 190
             self.exp0()
-            self.state = 185
+            self.state = 191
             self.match(PiinkkParser.T__4)
-            self.state = 186
+            self.state = 192
             self.match(PiinkkParser.T__0)
         except RecognitionException as re:
             localctx.exception = re
@@ -1495,23 +1557,23 @@ class PiinkkParser ( Parser ):
     def fun0(self):
 
         localctx = PiinkkParser.Fun0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 38, self.RULE_fun0)
+        self.enterRule(localctx, 40, self.RULE_fun0)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 188
+            self.state = 194
             self.match(PiinkkParser.FUNCTION)
-            self.state = 189
+            self.state = 195
             self.fun1()
-            self.state = 191
+            self.state = 197
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==26:
-                self.state = 190
+                self.state = 196
                 self.vars0()
 
 
-            self.state = 193
+            self.state = 199
             self.bloque0()
         except RecognitionException as re:
             localctx.exception = re
@@ -1557,27 +1619,27 @@ class PiinkkParser ( Parser ):
     def fun1(self):
 
         localctx = PiinkkParser.Fun1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 40, self.RULE_fun1)
+        self.enterRule(localctx, 42, self.RULE_fun1)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 195
+            self.state = 201
             self.type0()
-            self.state = 196
+            self.state = 202
             self.match(PiinkkParser.T__6)
-            self.state = 197
+            self.state = 203
             self.match(PiinkkParser.ID)
-            self.state = 198
+            self.state = 204
             self.match(PiinkkParser.T__3)
-            self.state = 200
+            self.state = 206
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & 1879048192) != 0):
-                self.state = 199
+                self.state = 205
                 self.fun2()
 
 
-            self.state = 202
+            self.state = 208
             self.match(PiinkkParser.T__4)
         except RecognitionException as re:
             localctx.exception = re
@@ -1619,21 +1681,21 @@ class PiinkkParser ( Parser ):
     def fun2(self):
 
         localctx = PiinkkParser.Fun2Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 42, self.RULE_fun2)
+        self.enterRule(localctx, 44, self.RULE_fun2)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 204
+            self.state = 210
             self.fun3()
-            self.state = 209
+            self.state = 215
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==8:
-                self.state = 205
-                self.match(PiinkkParser.T__7)
-                self.state = 206
-                self.fun3()
                 self.state = 211
+                self.match(PiinkkParser.T__7)
+                self.state = 212
+                self.fun3()
+                self.state = 217
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1678,14 +1740,14 @@ class PiinkkParser ( Parser ):
     def fun3(self):
 
         localctx = PiinkkParser.Fun3Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 44, self.RULE_fun3)
+        self.enterRule(localctx, 46, self.RULE_fun3)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 212
+            self.state = 218
             self.type0()
-            self.state = 213
+            self.state = 219
             self.match(PiinkkParser.T__6)
-            self.state = 214
+            self.state = 220
             self.var0()
         except RecognitionException as re:
             localctx.exception = re
@@ -1727,16 +1789,16 @@ class PiinkkParser ( Parser ):
     def body0(self):
 
         localctx = PiinkkParser.Body0Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 46, self.RULE_body0)
+        self.enterRule(localctx, 48, self.RULE_body0)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 216
+            self.state = 222
             self.match(PiinkkParser.MAIN)
-            self.state = 217
+            self.state = 223
             self.match(PiinkkParser.T__3)
-            self.state = 218
+            self.state = 224
             self.match(PiinkkParser.T__4)
-            self.state = 219
+            self.state = 225
             self.bloque0()
         except RecognitionException as re:
             localctx.exception = re
@@ -1772,10 +1834,10 @@ class PiinkkParser ( Parser ):
     def start(self):
 
         localctx = PiinkkParser.StartContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 48, self.RULE_start)
+        self.enterRule(localctx, 50, self.RULE_start)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 221
+            self.state = 227
             self.match(PiinkkParser.T__21)
         except RecognitionException as re:
             localctx.exception = re

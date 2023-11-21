@@ -13,8 +13,9 @@ while0: WHILE '(' expresion0 ')' DO bloque0;
 for0: FOR ID '=' exp0 TO exp0 DO bloque0;
 
 var0: ID | array0 | NUMBER | FLOAT_NUMBER;
+var1: ID | array0;
 vars0: VARS (vars1 ';')+;
-vars1: type0 ':' var0 (',' var0)*;
+vars1: type0 ':' var1 (',' var1)*;
 
 expresion0: exp0 (('==' | '>' | '<' | '!=' | '>=' | '<=') exp0)?;
 
@@ -24,7 +25,7 @@ exp0: termino0 (('+' | '-') exp0)?;
 termino0: factor0 (('*' | '/') termino0)?;
 
 factor0: ('(' expresion0 ')') | var0;
-
+/* AQUIIIIIIIIIIIIIIIIIIIIIIIIIII EMPIEZAAAAAAAAAAAASSSSSSSS*/
 bloque0: '{' estatuto0* '}';
 estatuto0: asignacion0
             | if0
