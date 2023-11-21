@@ -1,6 +1,6 @@
 Program Pelos;
 VARS
-int: 5,j,k, arreg[10];
+int: i,j,k, arreg[10];
 float: val;
 
 function int: fact (int: a, float: b)
