@@ -66,11 +66,15 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#var0.
     def enterVar0(self, ctx):
-        pass
+        var_info = ctx.getText()
+        piinkkLoader.operand_stack.append(var_info)
+        var_type = piinkkLoader.getType(var_info)
+        piinkkLoader.type_stack.append(var_type)
 
     # Exit a parse tree produced by PiinkkParser#var0.
     def exitVar0(self, ctx):
         pass
+
 
     # Enter a parse tree produced by PiinkkParser#vars0.
     def enterVars0(self, ctx):
@@ -79,6 +83,7 @@ class PiinkkListenerExt(PiinkkListener):
     # Exit a parse tree produced by PiinkkParser#vars0.
     def exitVars0(self, ctx):
         pass
+
 
     def enterVars1(self, ctx):
         vars_info = ctx.getText().split(':')
@@ -94,12 +99,12 @@ class PiinkkListenerExt(PiinkkListener):
             else:
                 var_name = var_info
                 piinkkLoader.variableCheck(var_name)
-                piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': vars_type}
-            
+                piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': vars_type}            
 
     # Exit a parse tree produced by PiinkkParser#vars1.
     def exitVars1(self, ctx):
         pass
+
 
     # Enter a parse tree produced by PiinkkParser#expresion0.
     def enterExpresion0(self, ctx):
@@ -107,6 +112,15 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Exit a parse tree produced by PiinkkParser#expresion0.
     def exitExpresion0(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#expresion1.
+    def enterExpresion1(self, ctx):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#expresion1.
+    def exitExpresion1(self, ctx):
         pass
 
 
@@ -119,12 +133,40 @@ class PiinkkListenerExt(PiinkkListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#exp1.
+    def enterExp1(self, ctx):
+        operator = ctx.getText()[0]
+        piinkkLoader.operator_stack.append(operator)
+
+    # Exit a parse tree produced by PiinkkParser#exp1.
+    def exitExp1(self, ctx):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#termino0.
     def enterTermino0(self, ctx):
         pass
 
     # Exit a parse tree produced by PiinkkParser#termino0.
     def exitTermino0(self, ctx):
+        Poper = piinkkLoader.operator_stack
+        PilaO = piinkkLoader.operand_stack
+        if Poper:
+            if Poper[-1] in ['+', '-']:
+                right_operand = PilaO.pop()
+                left_operand = PilaO.pop()
+                operator = Poper.pop()
+                print(f'{operator}   {right_operand}   {left_operand}')
+                
+            # print(piinkkLoader.operand_stack.pop())
+
+    # Enter a parse tree produced by PiinkkParser#termino1.
+    def enterTermino1(self, ctx):
+        operator = ctx.getText()[0]
+        piinkkLoader.operator_stack.append(operator)
+
+    # Exit a parse tree produced by PiinkkParser#termino1.
+    def exitTermino1(self, ctx):
         pass
 
 

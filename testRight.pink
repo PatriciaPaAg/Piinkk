@@ -5,26 +5,27 @@ float: val;
 
 function int: fact (int: a, float: b)
 VARS
-    int: x;
+    int: x, f;
     float: y;
 {
-    x = j + (f - j * 2 + j);
-    if(j == 1){
+    x = j + (f - j * x * j);
+    if(j == f){
         return(j);
     }else{
-return(j * (j-1));
+return(j * (j-k));
     }
 }
 
 function float: fibo (int: a, float: b, bool: arrBool[2])
 VARS
-    int: y;
+    int: x, y;
+    float: z, f;
 {
-    x = j + (f - j * 2 + j);
-    if(j == 1){
+    x = j + (f - j * i + j);
+    if(j == z){
         return(j);
     }else{
-return(j * (j-1));
+return(j * (j-z));
     }
 }
 

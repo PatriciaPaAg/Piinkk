@@ -26,6 +26,14 @@ class PiinkkLoader():
         if name in self.symbol_table:
             self.stopExecution(f'Function \'{name}\' is already declared.')
 
+    def getType(self, name):
+        if name in self.symbol_table['global']['variables']:
+            return self.symbol_table['global']['variables'][name]['type']
+        elif name in self.symbol_table[self.current_scope]['variables']:
+            return self.symbol_table[self.current_scope]['variables'][name]['type']
+        else:
+            self.stopExecution(f'Variable \'{name}\' is not declared.')
+
     def stopExecution(self, errorType):
         print(errorType)
         exit()

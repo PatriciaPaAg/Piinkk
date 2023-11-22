@@ -23,8 +23,13 @@ try:
     listener = PiinkkListenerExt()
     ParseTreeWalker().walk(listener, tree)
     print('\nPrints del main')
-    print(piinkkLoader.symbol_table)
-    print('hola mundo')
+    # print(piinkkLoader.symbol_table)
+    print(piinkkLoader.operand_stack)
+    print(piinkkLoader.type_stack)
+    print(piinkkLoader.operator_stack)
 
 except SyntaxError as e:
     print(F'Syntax ERROR: {e}')
+
+
+print('hola mundo')

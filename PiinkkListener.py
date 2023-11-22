@@ -108,6 +108,15 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#expresion1.
+    def enterExpresion1(self, ctx:PiinkkParser.Expresion1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#expresion1.
+    def exitExpresion1(self, ctx:PiinkkParser.Expresion1Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#exp0.
     def enterExp0(self, ctx:PiinkkParser.Exp0Context):
         pass
@@ -117,12 +126,30 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#exp1.
+    def enterExp1(self, ctx:PiinkkParser.Exp1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#exp1.
+    def exitExp1(self, ctx:PiinkkParser.Exp1Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#termino0.
     def enterTermino0(self, ctx:PiinkkParser.Termino0Context):
         pass
 
     # Exit a parse tree produced by PiinkkParser#termino0.
     def exitTermino0(self, ctx:PiinkkParser.Termino0Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#termino1.
+    def enterTermino1(self, ctx:PiinkkParser.Termino1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#termino1.
+    def exitTermino1(self, ctx:PiinkkParser.Termino1Context):
         pass
 
 

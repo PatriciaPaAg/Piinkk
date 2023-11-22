@@ -14,18 +14,22 @@ for0: FOR ID '=' exp0 TO exp0 DO bloque0;
 
 var0: ID | array0 | NUMBER | FLOAT_NUMBER;
 var1: ID | array0;
+
 vars0: VARS (vars1 ';')+;
 vars1: type0 ':' var1 (',' var1)*;
 
-expresion0: exp0 (('==' | '>' | '<' | '!=' | '>=' | '<=') exp0)?;
+expresion0: exp0 expresion1?;
+expresion1: ('==' | '>' | '<' | '!=' | '>=' | '<=') exp0;
 
-exp0: termino0 (('+' | '-') exp0)?; 
-/* 'aqui punto neuralgico' como ejecutar codigo en antlr visitor */
 
-termino0: factor0 (('*' | '/') termino0)?;
+exp0: termino0 exp1?;
+exp1: ('+' | '-') exp0;
+
+termino0: factor0 termino1?;
+termino1: ('*' | '/') termino0;
 
 factor0: ('(' expresion0 ')') | var0;
-/* AQUIIIIIIIIIIIIIIIIIIIIIIIIIII EMPIEZAAAAAAAAAAAASSSSSSSS*/
+
 bloque0: '{' estatuto0* '}';
 estatuto0: asignacion0
             | if0
@@ -43,7 +47,7 @@ return0: RETURN '(' exp0 ')' ';' ;
 fun0: FUNCTION fun1 vars0? bloque0;
 fun1: type0 ':' ID '(' (fun2)? ')';
 fun2: fun3 (',' fun3)* ;
-fun3: type0 ':' var0;
+fun3: type0 ':' var1;
 
 body0: MAIN '('')' bloque0;
 start : 'hola mundo' ;
