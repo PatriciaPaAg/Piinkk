@@ -8,6 +8,7 @@ prog: programita0 ';' vars0? fun0* body0 EOF;
 programita0: PROGRAM PROGRAMID ;
 
 type0: INT | FLOAT | BOOL;
+
 array0: ID '[' NUMBER ']';
 
 if0: IF '(' expresion0 ')' if1;
@@ -28,7 +29,6 @@ vars1: type0 ':' var1 (',' var1)*;
 expresion0: exp0 expresion1?;
 expresion1: ('==' | '>' | '<' | '!=' | '>=' | '<=') expresion0;
 
-
 exp0: termino0 exp1?;
 exp1: ('+' | '-') exp0;
 
@@ -46,7 +46,8 @@ estatuto0: asignacion0
             | escritura0
             | return0
             | lecturaInt0
-            | escritura0;
+            | escritura0
+            | funCall0;
             
 asignacion0: ID '=' expresion0 ';';
 
@@ -65,6 +66,11 @@ fun1: typeFun0 ':' ID '(' (fun2)? ')';
 fun2: fun3 (',' fun3)* ;
 fun3: type0 ':' var1;
 funContent0: bloque0;
+
+funCall0: ID '(' funCall1 ')';
+funCall1: funCallExp funCall2*;
+funCallExp: exp0;
+funCall2: (',' funCall1);
 
 body0: MAIN '('')' bloque0;
 start : 'hola mundo' ;

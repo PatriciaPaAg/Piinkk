@@ -342,6 +342,42 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#funCall0.
+    def enterFunCall0(self, ctx:PiinkkParser.FunCall0Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#funCall0.
+    def exitFunCall0(self, ctx:PiinkkParser.FunCall0Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#funCall1.
+    def enterFunCall1(self, ctx:PiinkkParser.FunCall1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#funCall1.
+    def exitFunCall1(self, ctx:PiinkkParser.FunCall1Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#funCallExp.
+    def enterFunCallExp(self, ctx:PiinkkParser.FunCallExpContext):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#funCallExp.
+    def exitFunCallExp(self, ctx:PiinkkParser.FunCallExpContext):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#funCall2.
+    def enterFunCall2(self, ctx:PiinkkParser.FunCall2Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#funCall2.
+    def exitFunCall2(self, ctx:PiinkkParser.FunCall2Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#body0.
     def enterBody0(self, ctx:PiinkkParser.Body0Context):
         pass

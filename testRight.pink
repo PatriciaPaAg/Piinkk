@@ -1,9 +1,10 @@
 Program Pelos;
 VARS
-int: x,y,z, arreg[10];
+int: x,y,z, arreg[2];
 float: val;
+bool: miVBool;
 
-function int: fact (int: a, int: b)
+function void: fact (int: a, int: b)
 VARS
     int: c, d;
     int: e;
@@ -37,6 +38,8 @@ main(){
     while(x != y) do{
         val = z + x - y / 3.14 * x + z;
     }
+    <3 fibo(val, x, miVBool)
+    fact(y, x)
     write('FIN');
 }
 

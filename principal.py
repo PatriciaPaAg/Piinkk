@@ -5,7 +5,7 @@ from PiinkkParser import PiinkkParser
 from piinkkLoader import piinkkLoader
 from piinkkErrorListener import PiinkkErrorListener
 
-filename = 'testRight.pink'
+filename = 'test2.pink'
 test = ''
 with open(filename, 'r') as file:
     test = file.readlines()
