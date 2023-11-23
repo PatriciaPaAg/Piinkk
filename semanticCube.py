@@ -134,3 +134,7 @@ semantic_cube = {
         },
     },
 }
+
+
+def cubo(operand1, operand2, operator):
+    return semantic_cube[operand1][operand2][operator]

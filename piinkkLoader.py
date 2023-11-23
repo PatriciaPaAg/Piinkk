@@ -11,6 +11,8 @@ class PiinkkLoader():
         self.symbol_table = defaultdict(lambda:{'variables':{}})
         self.current_scope = 'global'
         self.pendientes = []
+        self.temporal = 1
+        self.quadruples = []
 
     def set_current_scope(self, scope_name):
         self.current_scope = scope_name
@@ -34,14 +36,24 @@ class PiinkkLoader():
         else:
             self.stopExecution(f'Variable \'{name}\' is not declared.')
 
+    def getTemporal(self):
+        return self.temporal
+    
+    def addQuadruple(self, quadruple):
+        self.quadruples.append(quadruple)
+
+
+
+
+
+
+
+
     def stopExecution(self, errorType):
         print(errorType)
         exit()
 
 piinkkLoader = PiinkkLoader()
-
-
-
 
 
 # {'global': {'variables': {'i': {'type': 'int'}}}

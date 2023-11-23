@@ -1,6 +1,7 @@
 from antlr4 import *
 from PiinkkListener import PiinkkListener
 from piinkkLoader import piinkkLoader
+from semanticCube import *
 
 class PiinkkListenerExt(PiinkkListener):
 
@@ -151,15 +152,24 @@ class PiinkkListenerExt(PiinkkListener):
     def exitTermino0(self, ctx):
         Poper = piinkkLoader.operator_stack
         PilaO = piinkkLoader.operand_stack
+        PilaT = piinkkLoader.type_stack
         if Poper:
             if Poper[-1] in ['+', '-']:
                 right_operand = PilaO.pop()
+                right_type = PilaT.pop()
                 left_operand = PilaO.pop()
+                left_type = PilaT.pop()
                 operator = Poper.pop()
-                print(f'{operator}   {right_operand}   {left_operand}')
-                
-            # print(piinkkLoader.operand_stack.pop())
-
+                result_type = semantic_cube[right_type][left_type][operator]
+                if(result_type == PiinkkError):
+                    piinkkLoader.stopExecution(f'Type mismatch')
+                temporal = piinkkLoader.getTemporal()
+                PilaO.append(f't{temporal}')
+                PilaT.append(result_type)
+                piinkkLoader.addQuadruple([operator,left_operand, right_operand, f't{temporal}'])
+                piinkkLoader.temporal += 1
+    
+    
     # Enter a parse tree produced by PiinkkParser#termino1.
     def enterTermino1(self, ctx):
         operator = ctx.getText()[0]
@@ -176,7 +186,24 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Exit a parse tree produced by PiinkkParser#factor0.
     def exitFactor0(self, ctx):
-        pass
+        Poper = piinkkLoader.operator_stack
+        PilaO = piinkkLoader.operand_stack
+        PilaT = piinkkLoader.type_stack
+        if Poper:
+            if Poper[-1] in ['*', '/']:
+                right_operand = PilaO.pop()
+                right_type = PilaT.pop()
+                left_operand = PilaO.pop()
+                left_type = PilaT.pop()
+                operator = Poper.pop()
+                result_type = semantic_cube[right_type][left_type][operator]
+                if(result_type == PiinkkError):
+                    piinkkLoader.stopExecution(f'Type mismatch') 
+                temporal = piinkkLoader.getTemporal()
+                PilaO.append(f't{temporal}')
+                PilaT.append(result_type)
+                piinkkLoader.addQuadruple([operator,left_operand, right_operand, f't{temporal}'])
+                piinkkLoader.temporal += 1
 
 
     # Enter a parse tree produced by PiinkkParser#bloque0.

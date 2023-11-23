@@ -28,7 +28,8 @@ exp1: ('+' | '-') exp0;
 termino0: factor0 termino1?;
 termino1: ('*' | '/') termino0;
 
-factor0: ('(' expresion0 ')') | var0;
+factor0: var0;
+factor1: ('(' expresion0 ')') | var0;
 
 bloque0: '{' estatuto0* '}';
 estatuto0: asignacion0
