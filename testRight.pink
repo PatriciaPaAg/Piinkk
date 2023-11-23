@@ -30,6 +30,7 @@ VARS
     }else{
         return(f * g - i);
     }
+    <3 if(z){}
 }
 
 main(){

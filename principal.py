@@ -29,6 +29,7 @@ try:
     print(piinkkLoader.operator_stack)
     print(piinkkLoader.quadruples)
     print(piinkkLoader.symbol_table)
+    #print(piinkkLoader.quadruples)
 
 except SyntaxError as e:
     print(F'Syntax ERROR: {e}')

@@ -40,10 +40,55 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#if0.
     def enterIf0(self, ctx):
-        pass
+        piinkkLoader.clearStacks()
 
     # Exit a parse tree produced by PiinkkParser#if0.
     def exitIf0(self, ctx):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#if1.
+    def enterIf1(self, ctx):
+        PilaO = piinkkLoader.operand_stack
+        PilaT = piinkkLoader.type_stack
+        PJumps = piinkkLoader.jump_stack
+        exp_type = PilaT.pop()
+        if exp_type == 'bool':
+            result = PilaO.pop()
+            piinkkLoader.addQuadruple(['GOTOF', result])
+            print(f'{len(piinkkLoader.quadruples) - 1}')
+            print(f'\t\t\tGOTOF\t{result}')
+            PJumps.append(len(piinkkLoader.quadruples) - 1)
+            print('bool')
+        else:
+            piinkkLoader.stopExecution(f'Type mismatch: expecting bool') 
+
+
+    # Exit a parse tree produced by PiinkkParser#if1.
+    def exitIf1(self, ctx):
+        PJumps = piinkkLoader.jump_stack
+        end = PJumps.pop()
+        print('jump')
+        print(end)
+        piinkkLoader.quadruples[end].append(len(piinkkLoader.quadruples))
+        print(f'\t\t\t\t\t\t\t\t{piinkkLoader.quadruples[end]}')
+
+
+    # Enter a parse tree produced by PiinkkParser#else0.
+    def enterElse0(self, ctx):
+        PJumps = piinkkLoader.jump_stack
+        piinkkLoader.addQuadruple(['GOTO'])
+        print(f'{len(piinkkLoader.quadruples) - 1}')
+        print(f'\t\t\tGOTO')
+        inCase_false = PJumps.pop()
+        print('jump')
+        print(inCase_false)
+        PJumps.append(len(piinkkLoader.quadruples) - 1)
+        piinkkLoader.quadruples[inCase_false].append(len(piinkkLoader.quadruples))
+        print(f'\t\t\t\t\t\t\t\t{piinkkLoader.quadruples[inCase_false]}')
+
+    # Exit a parse tree produced by PiinkkParser#else0.
+    def exitElse0(self, ctx):
         pass
 
 

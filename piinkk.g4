@@ -8,8 +8,12 @@ prog: PROGRAM PROGRAMID ';' vars0? fun0* body0 EOF;
 type0: INT | FLOAT | BOOL;
 array0: ID '[' NUMBER ']';
 
-if0: IF '(' expresion0 ')' bloque0 (ELSE bloque0)?;
+if0: IF '(' expresion0 ')' if1;
+if1: bloque0 else0?;
+else0: ELSE bloque0;
+
 while0: WHILE '(' expresion0 ')' DO bloque0;
+
 for0: FOR ID '=' exp0 TO exp0 DO bloque0;
 
 var0: ID | array0 | NUMBER | FLOAT_NUMBER;
