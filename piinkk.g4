@@ -12,7 +12,8 @@ if0: IF '(' expresion0 ')' if1;
 if1: bloque0 else0?;
 else0: ELSE bloque0;
 
-while0: WHILE '(' expresion0 ')' DO bloque0;
+while0: WHILE '(' expresion0 ')' while1;
+while1: DO bloque0;
 
 for0: FOR ID '=' exp0 TO exp0 DO bloque0;
 

@@ -72,6 +72,15 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#while1.
+    def enterWhile1(self, ctx:PiinkkParser.While1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#while1.
+    def exitWhile1(self, ctx:PiinkkParser.While1Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#for0.
     def enterFor0(self, ctx:PiinkkParser.For0Context):
         pass

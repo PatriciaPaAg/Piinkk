@@ -94,11 +94,42 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#while0.
     def enterWhile0(self, ctx):
-        pass
+        piinkkLoader.jump_stack.append(len(piinkkLoader.quadruples))
 
     # Exit a parse tree produced by PiinkkParser#while0.
     def exitWhile0(self, ctx):
         pass
+
+
+    # Enter a parse tree produced by PiinkkParser#while1.
+    def enterWhile1(self, ctx):
+        PilaO = piinkkLoader.operand_stack
+        PilaT = piinkkLoader.type_stack
+        PJumps = piinkkLoader.jump_stack
+        exp_type = PilaT.pop()
+        if exp_type == 'bool':
+            result = PilaO.pop()
+            piinkkLoader.addQuadruple(['GOTOF', result])
+            print(f'{len(piinkkLoader.quadruples) - 1}')
+            print(f'\t\t\tGOTOF\t{result}')
+            PJumps.append(len(piinkkLoader.quadruples) - 1)
+            print('bool')
+        else:
+            piinkkLoader.stopExecution(f'Type mismatch: expecting bool') 
+
+    # Exit a parse tree produced by PiinkkParser#while1.
+    def exitWhile1(self, ctx):
+        PJumps = piinkkLoader.jump_stack
+        end = PJumps.pop()
+        returne = PJumps.pop()
+        print(f'end -> {end}')
+        print(f'returne -> {returne}')
+        piinkkLoader.addQuadruple(['GOTOF', returne])
+        print(f'{len(piinkkLoader.quadruples) - 1}')
+        print(f'\t\t\tGOTOF\t{returne}')
+        piinkkLoader.quadruples[end].append(len(piinkkLoader.quadruples))
+        print(f'\t\t\t\t\t\t\t\t{piinkkLoader.quadruples[end]}')
+
 
 
     # Enter a parse tree produced by PiinkkParser#for0.
