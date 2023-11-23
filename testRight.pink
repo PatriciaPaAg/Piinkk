@@ -10,8 +10,7 @@ VARS
     bool: bo;
     int: sip, nop;
 {
-    c = 5;
-    x = b + c - d * e * a;
+    x = b + c - d - 1 * e * a;
     bo = sip + c + d * e < nop * e + c + d ;
     write(sip + c + d, nop + sip);
     write('HOLA MUNDOTE ROSA', 'sigues ahi?');
@@ -20,12 +19,12 @@ VARS
 
 <3 this is a comment
 
-function float: fibo (int: f, int: g, bool: arrBool[2])
+function float: fibo (float: f, int: g, bool: arrBool[2])
 VARS
     int: h, i;
     int: j, k;
 {
-    f = g + h - i * j + k;
+    f = g + h - i / 3.14 * j + k;
     if(x == y){
         return(j);
     }else{
@@ -33,7 +32,9 @@ VARS
     }
 }
 
-main(){}
+main(){
+    write('FIN');
+}
 
 
 

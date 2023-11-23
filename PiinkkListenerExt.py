@@ -69,8 +69,14 @@ class PiinkkListenerExt(PiinkkListener):
     def enterVar0(self, ctx):
         var_info = ctx.getText()
         piinkkLoader.operand_stack.append(var_info)
-        var_type = piinkkLoader.getType(var_info)
-        piinkkLoader.type_stack.append(var_type)
+        # AQUI SE PUEDE PONER LO DE LOS NUMEROS ENTEROS O FLOAT
+        if piinkkLoader.isNumber(var_info) == 'int':
+            piinkkLoader.type_stack.append('int')
+        elif piinkkLoader.isNumber(var_info) == 'float':
+            piinkkLoader.type_stack.append('float')
+        else:
+            var_type = piinkkLoader.getType(var_info)
+            piinkkLoader.type_stack.append(var_type)
         print('Operand Stack')
         print(piinkkLoader.operand_stack)
 

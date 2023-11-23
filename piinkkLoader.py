@@ -46,11 +46,17 @@ class PiinkkLoader():
         self.operator_stack = []
         self.type_stack = []
         self.operand_stack = []
-        
 
-
-
-
+    def isNumber(self, text):
+        try:
+            int_value = int(text)
+            return 'int'
+        except ValueError:
+            try:
+                float_value = float(text)
+                return 'float'
+            except:
+                return False
 
 
     def stopExecution(self, errorType):
