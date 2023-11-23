@@ -37,12 +37,18 @@ estatuto0: asignacion0
             | while0
             | for0
             | escritura0
-            | return0;
+            | return0
+            | lecturaInt0
+            | escritura0;
             
 asignacion0: ID '=' expresion0 ';';
 
-escritura0: WRITE '(' escri ')' ';';
-escri: expresion0 | 'cte.string';
+escritura0: WRITE '(' escritura1+ ')' ';';
+escritura1: (escri1 | escri2) (','(escri1 | escri2))*;
+escri1: exp0;
+escri2: STRING;
+
+lecturaInt0: READ '(' ID ')' ';';
 
 return0: RETURN '(' exp0 ')' ';' ;
 
@@ -88,4 +94,5 @@ NUMBER: [0-9]+;
 FLOAT_NUMBER: NUMBER '.' [0-9]+;
 PROGRAMID: [A-Z][a-zA-Z0-9_]*;
 ID: [a-z][a-zA-Z0-9_]*;
-COMMENT: '<3'~[\r]* -> skip;
+STRING: '\'' .*? '\'' | '"' .*? '"';
+COMMENT:  '<3' .*? '\n' -> skip;

@@ -282,21 +282,47 @@ class PiinkkListenerExt(PiinkkListener):
         print(f'\t\t\t{operator}\t{assignThis_type}\t{assignTo_type}\t{result_type}')
 
 
-    # Enter a parse tree produced by PiinkkParser#escri.
-    def enterEscri(self, ctx):
-        pass
-
-    # Exit a parse tree produced by PiinkkParser#escri.
-    def exitEscri(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by PiinkkParser#escritura0.
     def enterEscritura0(self, ctx):
-        piinkkLoader.clearStacks()
+        pass
 
     # Exit a parse tree produced by PiinkkParser#escritura0.
     def exitEscritura0(self, ctx):
+        pass
+
+
+   # Enter a parse tree produced by PiinkkParser#escri.
+    def enterEscri1(self, ctx):
+        piinkkLoader.clearStacks()
+
+    # Exit a parse tree produced by PiinkkParser#escri.
+    def exitEscri1(self, ctx):
+        impre = piinkkLoader.operand_stack.pop()
+        piinkkLoader.addQuadruple(['print', impre])
+        print(f'\t\t\tprint\t{impre}')
+
+    def enterEscri2(self, ctx):
+        impre = ctx.getText()[1:-1]
+        piinkkLoader.addQuadruple(['print', impre])
+        print(f'\t\t\tprint\t{impre}')
+
+    # Exit a parse tree produced by PiinkkParser#escri.
+    def exitEscri2(self, ctx):
+        pass
+
+
+# Enter a parse tree produced by PiinkkParser#lectura0.
+    def enterLecturaInt0(self, ctx):
+        leido = ctx.getText().split('(')[1][:-2]
+        print(leido)
+        piinkkLoader.addQuadruple(['read', leido])
+        print(f'\t\t\tread\t{leido}')
+        piinkkLoader.variableCheck(leido)
+        piinkkLoader.symbol_table[piinkkLoader.current_scope]['variables'][leido] = {'type': 'int'}
+        piinkkLoader.pendientes.append('cambiar enterLectura a constantes enteras')
+
+    # Exit a parse tree produced by PiinkkParser#lectura0.
+    def exitLecturaInt0(self, ctx):
         pass
 
 

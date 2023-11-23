@@ -198,21 +198,48 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PiinkkParser#escri.
-    def enterEscri(self, ctx:PiinkkParser.EscriContext):
-        pass
-
-    # Exit a parse tree produced by PiinkkParser#escri.
-    def exitEscri(self, ctx:PiinkkParser.EscriContext):
-        pass
-
-
     # Enter a parse tree produced by PiinkkParser#escritura0.
     def enterEscritura0(self, ctx:PiinkkParser.Escritura0Context):
         pass
 
     # Exit a parse tree produced by PiinkkParser#escritura0.
     def exitEscritura0(self, ctx:PiinkkParser.Escritura0Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#escritura1.
+    def enterEscritura1(self, ctx:PiinkkParser.Escritura1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#escritura1.
+    def exitEscritura1(self, ctx:PiinkkParser.Escritura1Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#escri1.
+    def enterEscri1(self, ctx:PiinkkParser.Escri1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#escri1.
+    def exitEscri1(self, ctx:PiinkkParser.Escri1Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#escri2.
+    def enterEscri2(self, ctx:PiinkkParser.Escri2Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#escri2.
+    def exitEscri2(self, ctx:PiinkkParser.Escri2Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#lecturaInt0.
+    def enterLecturaInt0(self, ctx:PiinkkParser.LecturaInt0Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#lecturaInt0.
+    def exitLecturaInt0(self, ctx:PiinkkParser.LecturaInt0Context):
         pass
 
 

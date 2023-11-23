@@ -10,14 +10,15 @@ VARS
     bool: bo;
     int: sip, nop;
 {
+    c = 5;
     x = b + c - d * e * a;
     bo = sip + c + d * e < nop * e + c + d ;
-    if(y >= z){
-    
-    }else{
-        return(a * b-c);
-    }
+    write(sip + c + d, nop + sip);
+    write('HOLA MUNDOTE ROSA', 'sigues ahi?');
+    read(p);
 }
+
+<3 this is a comment
 
 function float: fibo (int: f, int: g, bool: arrBool[2])
 VARS
@@ -33,3 +34,7 @@ VARS
 }
 
 main(){}
+
+
+
+
