@@ -7,16 +7,23 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#prog.
     def enterProg(self, ctx):
-        #agregar nombre de programa and type to Symbol Table
-        #crear dir fun, inecesario porque ya esta creado
-        #piinkkLoader.symbol_table['nameProg'= ]
-        piinkkLoader.pendientes.append('agregar nombre de programa and type to Symbol Table')
         pass
 
     # Exit a parse tree produced by PiinkkParser#prog.
     def exitProg(self, ctx):
-        piinkkLoader.pendientes.append('delete dir fun and current variable global, or empty them')
-        #delete dir fun (necesario?) and current varTable (global)
+        #piinkkLoader.symbol_table['global'] = {}
+        piinkkLoader.pendientes.append('descomentaaar')
+        piinkkLoader.addQuadruple(['END'])
+        print(f'\t\t\tEND')
+        
+
+# Enter a parse tree produced by PiinkkParser#programita0.
+    def enterProgramita0(self, ctx):
+        prog_info = ctx.getText()[7:]
+        piinkkLoader.symbol_table['prog'] = {'name': prog_info, 'type': 'prog'} 
+
+    # Exit a parse tree produced by PiinkkParser#programita0.
+    def exitProgramita0(self, ctx):
         pass
 
 
@@ -129,7 +136,6 @@ class PiinkkListenerExt(PiinkkListener):
         print(f'\t\t\tGOTOF\t{returne}')
         piinkkLoader.quadruples[end].append(len(piinkkLoader.quadruples))
         print(f'\t\t\t\t\t\t\t\t{piinkkLoader.quadruples[end]}')
-
 
 
     # Enter a parse tree produced by PiinkkParser#for0.
@@ -423,8 +429,18 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Exit a parse tree produced by PiinkkParser#fun0.
     def exitFun0(self, ctx):
+        scope = piinkkLoader.current_scope
+        firstTemp = piinkkLoader.symbol_table[scope]['noTemp']
+        print(f'TEMPORAAAAAAALLLLL INICIAAAA {firstTemp}')
+        calcTemp = piinkkLoader.temporal - firstTemp
+        print(f'TEMPORAAAAAAALLLLL FINALIZAA  {piinkkLoader.temporal}')
+        piinkkLoader.symbol_table[scope]['noTemp'] = calcTemp
+        piinkkLoader.symbol_table[scope]['variables'] = {}
+        piinkkLoader.pendientes.append('descomentaaaarx2')
+        piinkkLoader.addQuadruple(['ENDFunc'])
+        print(f'\t\t\tENDFunc')
         piinkkLoader.set_current_scope('global')
-        piinkkLoader.pendientes.append('eliminar la variTable de la current_scope')
+
 
     # Enter a parse tree produced by PiinkkParser#fun1.
     def enterFun1(self, ctx):
@@ -433,12 +449,16 @@ class PiinkkListenerExt(PiinkkListener):
         fun_info = ctx.getText().split(':')
         fun_type, fun_name = fun_info[0], fun_info[1].split('(')[0]
         piinkkLoader.functionCheck(fun_name)
-        piinkkLoader.symbol_table[fun_name] = {'type': fun_type, 'variables': {}}
+        tempCalc = piinkkLoader.temporal
+        piinkkLoader.symbol_table[fun_name] = {'type': fun_type, 'start': 0,'variables': {}, 'signature': [], 'noParam': 0, 'noVar': 0, 'noTemp': tempCalc}
         piinkkLoader.set_current_scope(fun_name)
 
     # Exit a parse tree produced by PiinkkParser#fun1.
     def exitFun1(self, ctx):
-        pass
+        scope = piinkkLoader.current_scope
+        signature = piinkkLoader.symbol_table[scope]['signature']
+        piinkkLoader.symbol_table[scope]['noParam'] = len(signature)
+        
 
     # Enter a parse tree produced by PiinkkParser#fun2.
     def enterFun2(self, ctx):
@@ -459,15 +479,31 @@ class PiinkkListenerExt(PiinkkListener):
             var_arr_size = int(var_arr_size.rstrip(']'))
             piinkkLoader.variableCheck(var_name)
             piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': var_type, 'size': var_arr_size}
+            piinkkLoader.symbol_table[scope]['signature'].append(var_type)
         else:
             var_name = var_info
             piinkkLoader.variableCheck(var_name)
             piinkkLoader.symbol_table[scope]['variables'][var_name] = {'type': var_type}
-            
+            piinkkLoader.symbol_table[scope]['signature'].append(var_type)
 
     # Exit a parse tree produced by PiinkkParser#fun3.
     def exitFun3(self, ctx):
         pass
+
+
+    # Enter a parse tree produced by PiinkkParser#funContent0.
+    def enterFunContent0(self, ctx):
+        scope = piinkkLoader.current_scope
+        nVar = len(piinkkLoader.symbol_table[scope]['variables'])
+        nParam = piinkkLoader.symbol_table[scope]['noParam']
+        piinkkLoader.symbol_table[scope]['noVar'] = nVar - nParam
+        piinkkLoader.symbol_table[scope]['start'] = len(piinkkLoader.quadruples)
+        print(piinkkLoader.symbol_table[scope]['start'])
+
+    # Exit a parse tree produced by PiinkkParser#funContent0.
+    def exitFunContent0(self, ctx):
+        pass
+
 
     # Enter a parse tree produced by PiinkkParser#body0.
     def enterBody0(self, ctx):

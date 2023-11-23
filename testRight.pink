@@ -19,7 +19,7 @@ VARS
 
 <3 this is a comment
 
-function float: fibo (float: f, int: g, bool: arrBool[2])
+function void: fibo (float: f, int: g, bool: arrBool[2])
 VARS
     int: h, i;
     int: j, k;

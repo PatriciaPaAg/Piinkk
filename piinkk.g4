@@ -4,7 +4,9 @@ grammar Piinkk;
     package antlr;
 }
 
-prog: PROGRAM PROGRAMID ';' vars0? fun0* body0 EOF;
+prog: programita0 ';' vars0? fun0* body0 EOF;
+programita0: PROGRAM PROGRAMID ;
+
 type0: INT | FLOAT | BOOL;
 array0: ID '[' NUMBER ']';
 
@@ -57,10 +59,12 @@ lecturaInt0: READ '(' ID ')' ';';
 
 return0: RETURN '(' exp0 ')' ';' ;
 
-fun0: FUNCTION fun1 vars0? bloque0;
-fun1: type0 ':' ID '(' (fun2)? ')';
+typeFun0: (type0 | VOID);
+fun0: FUNCTION fun1 vars0? funContent0;
+fun1: typeFun0 ':' ID '(' (fun2)? ')';
 fun2: fun3 (',' fun3)* ;
 fun3: type0 ':' var1;
+funContent0: bloque0;
 
 body0: MAIN '('')' bloque0;
 start : 'hola mundo' ;

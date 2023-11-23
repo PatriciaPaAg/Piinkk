@@ -18,6 +18,15 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#programita0.
+    def enterProgramita0(self, ctx:PiinkkParser.Programita0Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#programita0.
+    def exitProgramita0(self, ctx:PiinkkParser.Programita0Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#type0.
     def enterType0(self, ctx:PiinkkParser.Type0Context):
         pass
@@ -279,6 +288,15 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#typeFun0.
+    def enterTypeFun0(self, ctx:PiinkkParser.TypeFun0Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#typeFun0.
+    def exitTypeFun0(self, ctx:PiinkkParser.TypeFun0Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#fun0.
     def enterFun0(self, ctx:PiinkkParser.Fun0Context):
         pass
@@ -312,6 +330,15 @@ class PiinkkListener(ParseTreeListener):
 
     # Exit a parse tree produced by PiinkkParser#fun3.
     def exitFun3(self, ctx:PiinkkParser.Fun3Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#funContent0.
+    def enterFunContent0(self, ctx:PiinkkParser.FunContent0Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#funContent0.
+    def exitFunContent0(self, ctx:PiinkkParser.FunContent0Context):
         pass
 
 
