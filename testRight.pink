@@ -1,31 +1,34 @@
 Program Pelos;
 VARS
-int: i,j,k, arreg[10];
+int: x,y,z, arreg[10];
 float: val;
 
-function int: fact (int: a, float: b)
+function int: fact (int: a, int: b)
 VARS
-    int: x, f;
-    float: y;
+    int: c, d;
+    int: e;
+    bool: bo;
+    int: sip, nop;
 {
-    x = j + (f - j * x * j);
-    if(j == f){
-        return(j);
+    x = b + c - d * e * a;
+    bo = sip + c + d * e < nop * e + c + d ;
+    if(y >= z){
+    
     }else{
-return(j * (j-k));
+        return(a * b-c);
     }
 }
 
-function float: fibo (int: a, float: b, bool: arrBool[2])
+function float: fibo (int: f, int: g, bool: arrBool[2])
 VARS
-    int: x, y;
-    float: z, f;
+    int: h, i;
+    int: j, k;
 {
-    x = j + (f - j * i + j);
-    if(j == z){
+    f = g + h - i * j + k;
+    if(x == y){
         return(j);
     }else{
-return(j * (j-z));
+        return(f * g - i);
     }
 }
 

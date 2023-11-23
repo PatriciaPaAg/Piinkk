@@ -71,6 +71,8 @@ class PiinkkListenerExt(PiinkkListener):
         piinkkLoader.operand_stack.append(var_info)
         var_type = piinkkLoader.getType(var_info)
         piinkkLoader.type_stack.append(var_type)
+        print('Operand Stack')
+        print(piinkkLoader.operand_stack)
 
     # Exit a parse tree produced by PiinkkParser#var0.
     def exitVar0(self, ctx):
@@ -118,7 +120,10 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#expresion1.
     def enterExpresion1(self, ctx):
-        pass
+        operator_info = ctx.getText()
+        for operator in ['==', '>', '<', '!=', '>=', '<=']:
+            if operator in operator_info:
+                piinkkLoader.operator_stack.append(operator)
 
     # Exit a parse tree produced by PiinkkParser#expresion1.
     def exitExpresion1(self, ctx):
@@ -131,7 +136,29 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Exit a parse tree produced by PiinkkParser#exp0.
     def exitExp0(self, ctx):
-        pass
+        Poper = piinkkLoader.operator_stack
+        PilaO = piinkkLoader.operand_stack
+        PilaT = piinkkLoader.type_stack
+        if Poper:
+            if Poper[-1] in ['==', '>', '<', '!=', '>=', '<=']:
+                right_operand = PilaO.pop()
+                right_type = PilaT.pop()
+                left_operand = PilaO.pop()
+                left_type = PilaT.pop()
+                operator = Poper.pop()
+                
+                result_type = semantic_cube[left_type][right_type][operator]
+                print(result_type)
+                if(result_type == PiinkkError):
+                    piinkkLoader.stopExecution(f'Type mismatch >') 
+                temporal = piinkkLoader.getTemporal()
+                PilaO.append(f't{temporal}')
+                PilaT.append(result_type)
+                piinkkLoader.addQuadruple([operator, left_operand, right_operand, f't{temporal}'])
+                print(f'\t\t\t{operator}\t{left_operand}\t{right_operand}\tt{temporal}')
+                print(f'\t\t\t{operator}\t{left_type}\t{right_type}\t{result_type}')
+                piinkkLoader.temporal += 1
+
 
 
     # Enter a parse tree produced by PiinkkParser#exp1.
@@ -160,16 +187,20 @@ class PiinkkListenerExt(PiinkkListener):
                 left_operand = PilaO.pop()
                 left_type = PilaT.pop()
                 operator = Poper.pop()
-                result_type = semantic_cube[right_type][left_type][operator]
+                result_type = semantic_cube[left_type][right_type][operator]
+                print(result_type)
                 if(result_type == PiinkkError):
-                    piinkkLoader.stopExecution(f'Type mismatch')
+                    piinkkLoader.stopExecution(f'Type mismatch +')
                 temporal = piinkkLoader.getTemporal()
                 PilaO.append(f't{temporal}')
                 PilaT.append(result_type)
-                piinkkLoader.addQuadruple([operator,left_operand, right_operand, f't{temporal}'])
+                piinkkLoader.addQuadruple([operator, left_operand, right_operand, f't{temporal}'])
+                print(f'\t\t\t{operator}\t{left_operand}\t{right_operand}\tt{temporal}')
+                print(f'\t\t\t{operator}\t{left_type}\t{right_type}\t{result_type}')
+                print(PilaO)
                 piinkkLoader.temporal += 1
     
-    
+
     # Enter a parse tree produced by PiinkkParser#termino1.
     def enterTermino1(self, ctx):
         operator = ctx.getText()[0]
@@ -196,13 +227,16 @@ class PiinkkListenerExt(PiinkkListener):
                 left_operand = PilaO.pop()
                 left_type = PilaT.pop()
                 operator = Poper.pop()
-                result_type = semantic_cube[right_type][left_type][operator]
+                result_type = semantic_cube[left_type][right_type][operator]
+                print(result_type)
                 if(result_type == PiinkkError):
-                    piinkkLoader.stopExecution(f'Type mismatch') 
+                    piinkkLoader.stopExecution(f'Type mismatch *') 
                 temporal = piinkkLoader.getTemporal()
                 PilaO.append(f't{temporal}')
                 PilaT.append(result_type)
-                piinkkLoader.addQuadruple([operator,left_operand, right_operand, f't{temporal}'])
+                piinkkLoader.addQuadruple([operator, left_operand, right_operand, f't{temporal}'])
+                print(f'\t\t\t{operator}\t{left_operand}\t{right_operand}\tt{temporal}')
+                print(f'\t\t\t{operator}\t{left_type}\t{right_type}\t{result_type}')
                 piinkkLoader.temporal += 1
 
 
@@ -226,11 +260,26 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#asignacion0.
     def enterAsignacion0(self, ctx):
-        pass
+        piinkkLoader.clearStacks()
 
     # Exit a parse tree produced by PiinkkParser#asignacion0.
     def exitAsignacion0(self, ctx):
-        pass
+        assignTo = ctx.getText().split('=')[0]
+        PilaO = piinkkLoader.operand_stack
+        PilaT = piinkkLoader.type_stack
+        assignThis = PilaO.pop()
+        assignThis_type = PilaT.pop()
+        assignTo_type = piinkkLoader.getType(assignTo)
+        operator = '='
+        result_type = semantic_cube[assignTo_type][assignThis_type][operator]
+        print(PilaO)
+        print(result_type)
+        print(assignTo_type, assignThis_type, operator)
+        if(result_type == PiinkkError):
+            piinkkLoader.stopExecution(f'Type mismatch =') 
+        piinkkLoader.addQuadruple([operator, assignThis, assignTo])
+        print(f'\t\t\t{operator}\t{assignThis}\t{assignTo}')
+        print(f'\t\t\t{operator}\t{assignThis_type}\t{assignTo_type}\t{result_type}')
 
 
     # Enter a parse tree produced by PiinkkParser#escri.
@@ -244,7 +293,7 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#escritura0.
     def enterEscritura0(self, ctx):
-        pass
+        piinkkLoader.clearStacks()
 
     # Exit a parse tree produced by PiinkkParser#escritura0.
     def exitEscritura0(self, ctx):
@@ -253,7 +302,7 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#return0.
     def enterReturn0(self, ctx):
-        pass
+        piinkkLoader.clearStacks()
 
     # Exit a parse tree produced by PiinkkParser#return0.
     def exitReturn0(self, ctx):
@@ -271,6 +320,8 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#fun1.
     def enterFun1(self, ctx):
+        print('ENTRA A FUNCION')
+        piinkkLoader.clearStacks()
         fun_info = ctx.getText().split(':')
         fun_type, fun_name = fun_info[0], fun_info[1].split('(')[0]
         piinkkLoader.functionCheck(fun_name)
@@ -312,7 +363,7 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#body0.
     def enterBody0(self, ctx):
-        pass
+        piinkkLoader.clearStacks()
 
     # Exit a parse tree produced by PiinkkParser#body0.
     def exitBody0(self, ctx):

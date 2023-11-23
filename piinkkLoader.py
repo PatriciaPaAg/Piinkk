@@ -42,7 +42,11 @@ class PiinkkLoader():
     def addQuadruple(self, quadruple):
         self.quadruples.append(quadruple)
 
-
+    def clearStacks(self):
+        self.operator_stack = []
+        self.type_stack = []
+        self.operand_stack = []
+        
 
 
 

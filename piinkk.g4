@@ -19,7 +19,7 @@ vars0: VARS (vars1 ';')+;
 vars1: type0 ':' var1 (',' var1)*;
 
 expresion0: exp0 expresion1?;
-expresion1: ('==' | '>' | '<' | '!=' | '>=' | '<=') exp0;
+expresion1: ('==' | '>' | '<' | '!=' | '>=' | '<=') expresion0;
 
 
 exp0: termino0 exp1?;
@@ -41,8 +41,9 @@ estatuto0: asignacion0
             
 asignacion0: ID '=' expresion0 ';';
 
+escritura0: WRITE '(' escri ')' ';';
 escri: expresion0 | 'cte.string';
-escritura0: WRITE '(' escri (',' escri)* ')' ';';
+
 return0: RETURN '(' exp0 ')' ';' ;
 
 fun0: FUNCTION fun1 vars0? bloque0;

@@ -33,7 +33,7 @@ semantic_cube = {
             '>=': 'bool',
             '==': 'bool',
             '!=': 'bool',
-            '=': 'float',
+            '=': PiinkkError,
         },
         'bool':{
             '*': PiinkkError,
@@ -62,7 +62,7 @@ semantic_cube = {
             '>=': 'bool',
             '==': 'bool',
             '!=': 'bool',
-            '=': 'float',
+            '=': PiinkkError,
         },
         'float':{
             '*': 'float',
