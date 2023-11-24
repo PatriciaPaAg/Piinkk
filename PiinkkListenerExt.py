@@ -11,8 +11,7 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Exit a parse tree produced by PiinkkParser#prog.
     def exitProg(self, ctx):
-        #piinkkLoader.symbol_table['global'] = {}
-        piinkkLoader.pendientes.append('descomentaaar')
+        piinkkLoader.symbol_table = {}
         piinkkLoader.addQuadruple(['END'])
         print(f'\t\t\tEND')
         
@@ -20,7 +19,10 @@ class PiinkkListenerExt(PiinkkListener):
 # Enter a parse tree produced by PiinkkParser#programita0.
     def enterProgramita0(self, ctx):
         prog_info = ctx.getText()[7:]
-        piinkkLoader.symbol_table['prog'] = {'name': prog_info, 'type': 'prog'} 
+        piinkkLoader.symbol_table['prog'] = {'name': prog_info, 'type': 'prog'}
+        piinkkLoader.addQuadruple(['GOTO', None, None])
+        print(f'\t\t\tGOTO\t\t\t_')
+                
 
     # Exit a parse tree produced by PiinkkParser#programita0.
     def exitProgramita0(self, ctx):
@@ -62,11 +64,11 @@ class PiinkkListenerExt(PiinkkListener):
         exp_type = PilaT.pop()
         if exp_type == 'bool':
             result = PilaO.pop()
-            piinkkLoader.addQuadruple(['GOTOF', None, None, result])
+            piinkkLoader.addQuadruple(['GOTOF', result, None])
             print(f'{len(piinkkLoader.quadruples) - 1}')
-            print(f'\t\t\tGOTOF\t\t\t{result}')
+            print(f'\t\t\tGOTOF\t{result}\t\t_')
             PJumps.append(len(piinkkLoader.quadruples) - 1)
-            print('bool')
+            #print('bool')
         else:
             piinkkLoader.stopExecution(f'Type mismatch: expecting bool') 
 
@@ -75,8 +77,8 @@ class PiinkkListenerExt(PiinkkListener):
     def exitIf1(self, ctx):
         PJumps = piinkkLoader.jump_stack
         end = PJumps.pop()
-        print('jump')
-        print(end)
+        #print('jump')
+        #print(end)
         piinkkLoader.quadruples[end].append(len(piinkkLoader.quadruples))
         print(f'\t\t\t\t\t\t{piinkkLoader.quadruples[end]}')
 
@@ -88,8 +90,8 @@ class PiinkkListenerExt(PiinkkListener):
         print(f'{len(piinkkLoader.quadruples) - 1}')
         print(f'\t\t\tGOTO\t\t')
         inCase_false = PJumps.pop()
-        print('jump')
-        print(inCase_false)
+        #print('jump')
+        #print(inCase_false)
         PJumps.append(len(piinkkLoader.quadruples) - 1)
         piinkkLoader.quadruples[inCase_false].append(len(piinkkLoader.quadruples))
         print(f'\t\t\t\t\t\t{piinkkLoader.quadruples[inCase_false]}')
@@ -116,10 +118,10 @@ class PiinkkListenerExt(PiinkkListener):
         exp_type = PilaT.pop()
         if exp_type == 'bool':
             result = PilaO.pop()
-            piinkkLoader.addQuadruple(['GOTOF', None, None, result])
-            print(f'{len(piinkkLoader.quadruples) - 1}\t\t\tGOTOF\t\t\t{result}')
+            piinkkLoader.addQuadruple(['GOTOF', result, None])
+            print(f'\t\t\tGOTOF\t{result}\t\t_')
             PJumps.append(len(piinkkLoader.quadruples) - 1)
-            print('bool')
+            #print('bool')
         else:
             piinkkLoader.stopExecution(f'Type mismatch: expecting bool') 
 
@@ -128,10 +130,10 @@ class PiinkkListenerExt(PiinkkListener):
         PJumps = piinkkLoader.jump_stack
         end = PJumps.pop()
         returne = PJumps.pop()
-        print(f'end -> {end}')
-        print(f'returne -> {returne}')
-        piinkkLoader.addQuadruple(['GOTOF', None, None, returne])
-        print(f'{len(piinkkLoader.quadruples) - 1}\t\t\tGOTOF\t\t\t{returne}')
+        #print(f'end -> {end}')
+        #print(f'returne -> {returne}')
+        piinkkLoader.addQuadruple(['GOTOF', returne, None])
+        print(f'\t\t\tGOTOF\t{returne}\t\t_')
         piinkkLoader.quadruples[end].append(len(piinkkLoader.quadruples))
         print(f'\t\t\t\t\t\t{piinkkLoader.quadruples[end]}')
 
@@ -157,8 +159,8 @@ class PiinkkListenerExt(PiinkkListener):
         else:
             var_type = piinkkLoader.getType(var_info)
             piinkkLoader.type_stack.append(var_type)
-        print('Operand Stack')
-        print(piinkkLoader.operand_stack)
+        #print('Operand Stack')
+        #print(piinkkLoader.operand_stack)
 
     # Exit a parse tree produced by PiinkkParser#var0.
     def exitVar0(self, ctx):
@@ -234,7 +236,7 @@ class PiinkkListenerExt(PiinkkListener):
                 operator = Poper.pop()
                 
                 result_type = semantic_cube[left_type][right_type][operator]
-                print(result_type)
+                #print(result_type)
                 if(result_type == PiinkkError):
                     piinkkLoader.stopExecution(f'Type mismatch >') 
                 temporal = piinkkLoader.getTemporal()
@@ -273,7 +275,7 @@ class PiinkkListenerExt(PiinkkListener):
                 left_type = PilaT.pop()
                 operator = Poper.pop()
                 result_type = semantic_cube[left_type][right_type][operator]
-                print(result_type)
+                #print(result_type)
                 if(result_type == PiinkkError):
                     piinkkLoader.stopExecution(f'Type mismatch +')
                 temporal = piinkkLoader.getTemporal()
@@ -281,7 +283,7 @@ class PiinkkListenerExt(PiinkkListener):
                 PilaT.append(result_type)
                 piinkkLoader.addQuadruple([operator, left_operand, right_operand, f't{temporal}'])
                 print(f'\t\t\t{operator}\t{left_operand}\t{right_operand}\tt{temporal}\t\t\t{operator}\t{left_type}\t{right_type}\t{result_type}')
-                print(PilaO)
+                #print(PilaO)
                 piinkkLoader.temporal += 1
     
 
@@ -312,7 +314,7 @@ class PiinkkListenerExt(PiinkkListener):
                 left_type = PilaT.pop()
                 operator = Poper.pop()
                 result_type = semantic_cube[left_type][right_type][operator]
-                print(result_type)
+                #print(result_type)
                 if(result_type == PiinkkError):
                     piinkkLoader.stopExecution(f'Type mismatch *') 
                 temporal = piinkkLoader.getTemporal()
@@ -355,9 +357,9 @@ class PiinkkListenerExt(PiinkkListener):
         assignTo_type = piinkkLoader.getType(assignTo)
         operator = '='
         result_type = semantic_cube[assignTo_type][assignThis_type][operator]
-        print(PilaO)
-        print(result_type)
-        print(assignTo_type, assignThis_type, operator)
+        # print(PilaO)
+        # print(result_type)
+        # print(assignTo_type, assignThis_type, operator)
         if(result_type == PiinkkError):
             piinkkLoader.stopExecution(f'Type mismatch =') 
         piinkkLoader.addQuadruple([operator, assignThis, None, assignTo])
@@ -380,6 +382,7 @@ class PiinkkListenerExt(PiinkkListener):
     # Exit a parse tree produced by PiinkkParser#escri.
     def exitEscri1(self, ctx):
         impre = piinkkLoader.operand_stack.pop()
+        impre_type = piinkkLoader.type_stack.pop()
         piinkkLoader.addQuadruple(['print', None, None, impre])
         print(f'\t\t\tprint\t\t\t{impre}')
 
@@ -396,7 +399,7 @@ class PiinkkListenerExt(PiinkkListener):
 # Enter a parse tree produced by PiinkkParser#lectura0.
     def enterLecturaInt0(self, ctx):
         leido = ctx.getText().split('(')[1][:-2]
-        print(leido)
+        #print(leido)
         piinkkLoader.addQuadruple(['read', None, None, leido])
         print(f'\t\t\tread\t\t\t{leido}')
         piinkkLoader.variableCheck(leido)
@@ -430,7 +433,6 @@ class PiinkkListenerExt(PiinkkListener):
         #print(f'TEMPORAAAAAAALLLLL FINALIZAA  {piinkkLoader.temporal}')
         piinkkLoader.symbol_table[scope]['noTemp'] = calcTemp
         piinkkLoader.symbol_table[scope]['variables'] = {}
-        piinkkLoader.pendientes.append('descomentaaaarx2')
         piinkkLoader.addQuadruple(['ENDFunc'])
         print(f'\t\t\tENDFunc')
         piinkkLoader.set_current_scope('global')
@@ -492,7 +494,7 @@ class PiinkkListenerExt(PiinkkListener):
         nParam = piinkkLoader.symbol_table[scope]['noParam']
         piinkkLoader.symbol_table[scope]['noVar'] = nVar - nParam
         piinkkLoader.symbol_table[scope]['start'] = len(piinkkLoader.quadruples)
-        print(piinkkLoader.symbol_table[scope]['start'])
+        # print(piinkkLoader.symbol_table[scope]['start'])
 
     # Exit a parse tree produced by PiinkkParser#funContent0.
     def exitFunContent0(self, ctx):
@@ -511,8 +513,8 @@ class PiinkkListenerExt(PiinkkListener):
         piinkkLoader.addQuadruple(['ERA', None, None, fun_name])
         print(f'\t\t\tERA\t\t\t{fun_name}')
         #piinkkLoader.param_count += 1
-        print('PARAAAAAAMMMM COUUUUUUNTTTTTTTTTT')
-        print(piinkkLoader.param_count)
+        # print('PARAAAAAAMMMM COUUUUUUNTTTTTTTTTT')
+        # print(piinkkLoader.param_count)
         #piinkkLoader.symbol_table[
 
     # Exit a parse tree produced by PiinkkParser#funCall0.
@@ -552,16 +554,16 @@ class PiinkkListenerExt(PiinkkListener):
         argument_type = PilaT.pop()
         parameter_count = piinkkLoader.param_count
         signature = piinkkLoader.symbol_table[fun]['signature']
-        print(parameter_count)
+        # print(parameter_count)
         if parameter_count > len(signature):
             piinkkLoader.stopExecution(f'Too many arguments')
         parameter_type = piinkkLoader.symbol_table[fun]['signature'][parameter_count - 1]
-        print('ARGUMEEEEEENT TYPEEEEEEE')
-        print(argument)
-        print(argument_type)
-        print('PARAAAAAAMMMM TYPEEEEEEE')
-        print(parameter_count)
-        print(parameter_type)
+        # print('ARGUMEEEEEENT TYPEEEEEEE')
+        # print(argument)
+        # print(argument_type)
+        # print('PARAAAAAAMMMM TYPEEEEEEE')
+        # print(parameter_count)
+        # print(parameter_type)
         if parameter_type == argument_type:
             piinkkLoader.addQuadruple(['PARAM', argument, None, f'par{parameter_count}'])
             print(f'\t\t\tPARAM\t{argument}\t\tpar{parameter_count}')
@@ -582,6 +584,8 @@ class PiinkkListenerExt(PiinkkListener):
 
     # Enter a parse tree produced by PiinkkParser#body0.
     def enterBody0(self, ctx):
+        piinkkLoader.quadruples[0].append(len(piinkkLoader.quadruples) + 1)
+        print(f'\t\t\t\t\t\t{piinkkLoader.quadruples[0]}')
         piinkkLoader.clearStacks()
 
     # Exit a parse tree produced by PiinkkParser#body0.
