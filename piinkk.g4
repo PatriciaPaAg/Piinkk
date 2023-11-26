@@ -47,9 +47,11 @@ estatuto0: asignacion0
             | return0
             | lecturaInt0
             | escritura0
-            | funCall0;
+            | funCall;
             
-asignacion0: ID '=' expresion0 ';';
+asignacion0: ID '=' asignacion1 ';';
+asignacion1: expresion0
+            | funCall0;
 
 escritura0: WRITE '(' escritura1+ ')' ';';
 escritura1: (escri1 | escri2) (','(escri1 | escri2))*;
@@ -67,6 +69,7 @@ fun2: fun3 (',' fun3)* ;
 fun3: type0 ':' var1;
 funContent0: bloque0;
 
+funCall: funCall0 ';';
 funCall0: ID '(' funCall1 ')';
 funCall1: funCallExp funCall2*;
 funCallExp: exp0;

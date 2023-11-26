@@ -234,6 +234,15 @@ class PiinkkListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PiinkkParser#asignacion1.
+    def enterAsignacion1(self, ctx:PiinkkParser.Asignacion1Context):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#asignacion1.
+    def exitAsignacion1(self, ctx:PiinkkParser.Asignacion1Context):
+        pass
+
+
     # Enter a parse tree produced by PiinkkParser#escritura0.
     def enterEscritura0(self, ctx:PiinkkParser.Escritura0Context):
         pass
@@ -339,6 +348,15 @@ class PiinkkListener(ParseTreeListener):
 
     # Exit a parse tree produced by PiinkkParser#funContent0.
     def exitFunContent0(self, ctx:PiinkkParser.FunContent0Context):
+        pass
+
+
+    # Enter a parse tree produced by PiinkkParser#funCall.
+    def enterFunCall(self, ctx:PiinkkParser.FunCallContext):
+        pass
+
+    # Exit a parse tree produced by PiinkkParser#funCall.
+    def exitFunCall(self, ctx:PiinkkParser.FunCallContext):
         pass
 
 

@@ -6,6 +6,7 @@ from collections import defaultdict
 class PiinkkLoader():
     def __init__(self):
         self.operator_stack = []
+        self.operator_stack_dir = []
         self.type_stack = []
         self.operand_stack = []
         self.jump_stack = []
@@ -21,8 +22,12 @@ class PiinkkLoader():
         self.current_scope = scope_name
 
     def variableCheck(self, name):
-        if name in self.symbol_table[self.current_scope]['variables']:
-            self.stopExecution(f'Variable \'{name}\' is already declared in {self.current_scope} scope.')
+        if name in self.symbol_table['global']['variables']:
+            self.stopExecution(f'Variable \'{name}\' is already declared in global scope.')
+        
+        if self.current_scope != 'global':
+            if name in self.symbol_table[self.current_scope]['variables']:
+                self.stopExecution(f'Variable \'{name}\' is already declared in current scope.')
         
     def functionCheck(self, name):
         if name in self.symbol_table:
@@ -65,6 +70,19 @@ class PiinkkLoader():
     
     def set_param_count(self, count):
         self.param_count = count
+
+    def getAddress(self, name):
+        if name in self.symbol_table['global']['variables']:
+            return self.symbol_table['global']['variables'][name]['address']
+        elif name in self.symbol_table[self.current_scope]['variables']:
+            return self.symbol_table[self.current_scope]['variables'][name]['address']
+        elif name in self.symbol_table['temp']['variables']:
+            return self.symbol_table['temp']['variables'][name]['address']
+        elif name in self.symbol_table['cte']['variables']:
+            return self.symbol_table['cte']['variables'][name]['address']
+        else:
+            return None
+            # self.stopExecution(f'Variable \'{name}\' does not have an assignated address.')
 
     def stopExecution(self, errorType):
         print(errorType)

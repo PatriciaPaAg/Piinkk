@@ -1,33 +1,47 @@
 Program Patito;
 
 VARS
-    int: a, b;
-    float: f;
+    int: x, y, a, b;
+    float: z;
 
-function void: uno(int: a)
+function int: uno(int: g, bool: bo, float: flo)
+VARS
+    int: i;
+    float: f;
+    bool: be;
 {
     a = a + b * a;
     write(a, b, a + b);
+    return(a);
 }
 
-function void: dos(int: a, int: b, float: g)
+function void: dos(int: c, int: d, float: g)
 VARS
     int: i;
+    float: f;
+    bool: bee;
 {
     i = b;
     while(i > 0) do{
         a = a + b * i + b;
-        uno(i * 2)
+        uno(i * 2, bee, f);
         write(a);
         i = i - 1;
     }
+    c = i + a - c;
 }
 
 main(){
-    a = 3;
+    <3 a = 4;
+    if(a == 3){
+        b = 5 + 4 + 7 + 0 + 2;
+    }else {
+        z = 6 / a;
+    }
+
     b = a + 1;
     write(a, b);
-    f = 3.14;
-    dos(a + b * 2, b, f * 3)
-    write(a, b, f * 2 + 1);
+    z = 3.14;
+    dos(a + b * 2, b, z * 3);
+    write(a, b, x * 2 + 1);
 }
