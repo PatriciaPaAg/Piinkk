@@ -16,7 +16,7 @@ class PiinkkListenerExt(PiinkkListener):
     # Exit a parse tree produced by PiinkkParser#prog.
     def exitProg(self, ctx):
         piinkkLoader.symbol_table = {}
-        piinkkLoader.addQuadruple(['END'])
+        piinkkLoader.addQuadruple(['END', None, None, None])
         print(f'\t\t\tEND\t\t\tEND')
         
 
@@ -465,7 +465,7 @@ class PiinkkListenerExt(PiinkkListener):
         calcTemp = piinkkLoader.temporal - firstTemp
         #print(f'TEMPORAAAAAAALLLLL FINALIZAA  {piinkkLoader.temporal}')
         piinkkLoader.symbol_table[scope]['noTemp'] = calcTemp
-        piinkkLoader.addQuadruple(['ENDFunc'])
+        piinkkLoader.addQuadruple(['ENDFunc', None, None, None])
         print(f'\t\t\tENDFunc\t\t\t\t\t\tENDFunc')
         piinkkLoader.symbol_table[scope]['variables'] = {}
         piinkkLoader.set_current_scope('global')

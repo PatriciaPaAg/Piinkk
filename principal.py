@@ -5,6 +5,8 @@ from PiinkkListenerExt import PiinkkListenerExt
 from PiinkkParser import PiinkkParser
 from piinkkLoader import piinkkLoader
 from piinkkErrorListener import PiinkkErrorListener
+from MemoryManage import memoryManage
+from PiinkkVM import PiinkkVM
 
 # Load the file
 filename = 'test2.pink'
@@ -48,6 +50,12 @@ try:
     #     print(piinkkLoader.quadruples[contador])
     #     contador += 1
     print(piinkkLoader.symbol_table)
+    # print(piinkkLoader.quadruples)
+    quadruples = piinkkLoader.quadruples
+    virtualMachine = PiinkkVM()
+    virtualMachine.quadruples = quadruples
+    virtualMachine.run()
+    # PiinkkVM.execute(quadruples)
 
 except SyntaxError as e:
     # Print a syntax error message if a syntax error is encountered
